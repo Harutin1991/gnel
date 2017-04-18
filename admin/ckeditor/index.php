@@ -1,0 +1,1 @@
+<textarea name="<?php echo $name; ?>" id="<?php echo $id; ?>" aria-hidden="true" class='ckEditor' style='margin-left:50px;'><?php echo $text; ?></textarea>

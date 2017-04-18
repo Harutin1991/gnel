@@ -1,0 +1,31 @@
+.mobile_menu .left span, .mobile_menu .right span{
+    font-size: 12px; 
+    font-family: 'Source Sans Pro', Tahoma, "Arian AMU", Sans-serif;
+}
+.h1-top{
+    font-size: 24px;
+}
+
+
+@media only screen and (max-width: 750px){
+    .cart-info thead td, .cart-info tbody a, .cart-info td {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 400px) and (min-width: 0){
+
+    .buttons_size div.right a, .buttons_size div.center a{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and (max-width: 338px) and (min-width: 0){
+
+  #header #cart .heading h4 {
+        font-size: 13px;
+    }
+    #header #cart .heading a span{
+        padding-right: 5px;
+    }
+}

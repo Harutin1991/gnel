@@ -1,0 +1,25 @@
+body{
+    font-size: 12px;
+}
+.order-products-info{
+    width: 100%;
+}
+.print_block_top img{
+    width: 100px;
+}
+.print_block_top span{
+   float:right;
+    margin-top: 10px;
+}
+table.order-products-info, table.order-products-info tfoot tr td{
+    border: none;
+}
+table.order-products-info tr td{
+    padding: 1px 10px;
+}
+table.order-products-info tfoot tr td{
+    padding: 0 10px;
+}
+.order-products-info-height{
+    height: 800px;
+}

@@ -1,0 +1,16 @@
+@media only screen and (max-width: 750px){
+    .cart-info thead td, .cart-info tbody a, .cart-info td {
+        font-size: 8px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 400px) and (min-width: 0){
+    
+    .buttons_size div.right a, .buttons_size div.center a{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
