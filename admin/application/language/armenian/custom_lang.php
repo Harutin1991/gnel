@@ -185,4 +185,7 @@ $lang['Show products']				 						= "Տեսնել ապրանքները";
 $lang['Sale products']				 						= "Զեղչված ապրանքներ";
 $lang['All products']				 						= "Բոլոր ապրանքները";
 $lang['Ordering']				 						    = "Դասավորվածություն";
+$lang['Create sub page']				 				    = "Ավելացնել ենթաէջ";
+$lang['Show sub pages']				 				        = "Ցույց տալ ենթաէջերը";
+
 

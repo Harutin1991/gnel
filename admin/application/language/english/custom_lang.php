@@ -175,5 +175,7 @@ $lang['Add partner']		 						        = "Add partner";
 $lang['Link']				 						        = "Link";
 $lang['Special']				 						    = "Special";
 $lang['Ordering']				 						    = "Ordering";
+$lang['Create sub page']				 				    = "Create sub page";
+$lang['Show sub pages']				 				        = "Show sub page";
 
 

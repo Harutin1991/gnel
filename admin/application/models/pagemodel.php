@@ -83,6 +83,49 @@ class PageModel extends MultilangModel {
         
         return $rules;
     }
+
+    public function getPageChildes($table, $id) {
+
+        $query = $this->db->get_where($table, array('parent_id' => $id));
+
+        if ($query->num_rows() > 0) {
+            $record = $query->result_array();
+//            print_r($record); die;
+
+            for ($i = 0; $i < count($record); $i++) {
+                if (count($record) > 0) {
+                    $languages = $this->getLanguages();
+
+                    foreach ($languages as $language) {
+
+                        $query = $this->db->get_where($this->table_t, array(
+                                $this->foreign_key => $id,
+                                $this->lang_key => $language->code
+                            )
+                        );
+
+                        $record_t = $query->row_array();
+
+                        if (count($record_t) > 0) {
+                            foreach ($this->attributes_t as $attr) {
+                                $record[$i][$attr . "_" . $language->code] = $record_t[$attr];
+                            }
+                        } else {
+                            foreach ($this->attributes_t as $attr) {
+                                //  $record[$attr."_".$language->code] = $record[$attr];
+                                $record[$i][$attr . "_" . $language->code] = NULL;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return $record;
+        }
+
+    }
+
 }
 
 ?>

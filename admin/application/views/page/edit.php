@@ -74,17 +74,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <div class="image-box">
-                                        <label class="control-label" for="image" ><?php echo $this->lang->line('Image'); ?></label>
-                                        <input name="image" value="<?php echo set_value('image'); ?>" type="file" class="form-control" id="image">
-                                        <div class="error"><?php echo form_error('image'); ?></div>
-                                        <div>
-                                            <img id="current-image" src="<?php echo $this->config->item('frontend_url') . 'images/pages/' . $page['image']; ?>" width="100" title="<?php echo $this->lang->line('Change image'); ?>" />
-                                        </div>
-                                    </div>
+                                <td class="upload_image_wrapper">
+                                    <?php $img_url = $page['image'] != '' ? $this->config->item('frontend_url') . 'images/pages/' . $page['image'] : base_url('img/upload-icon.png'); ?>
+                                    <label class="control-label" for="image" ><?php echo $this->lang->line('Chose image'); ?></label><br/>
+                                    <input name="image" value="<?php echo set_value('image'); ?>" class="form-control" type="file"  id="image">
+                                    <div><img src="<?php echo $img_url; ?>" alt="" id="current-image"/></div>
+                                    <div class="error"><?php echo form_error('image'); ?></div>
                                 </td>
                             </tr>
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <div class="image-box">-->
+<!--                                        <label class="control-label" for="image" >--><?php //echo $this->lang->line('Image'); ?><!--</label>-->
+<!--                                        <input name="image" value="--><?php //echo set_value('image'); ?><!--" type="file" class="form-control" id="image">-->
+<!--                                        <div class="error">--><?php //echo form_error('image'); ?><!--</div>-->
+<!--                                        <div>-->
+<!--                                            <img id="current-image" src="--><?php //echo $this->config->item('frontend_url') . 'images/pages/' . $page['image']; ?><!--" width="100" title="--><?php //echo $this->lang->line('Change image'); ?><!--" />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+<!--                            </tr>-->
                             <tr>
                                 <td>
                                     <label class="control-label" for="Page[status]" ><?php echo $this->lang->line('Status'); ?></label>
@@ -110,10 +119,20 @@
             $('.noty').trigger('click');
         }, 1000);
 
-        $('#image').css('display', 'none');
-        $('#current-image').click(function() {
-            $('#image').click();
+        $('#image').bind("change", function(e) {
+            readURL(this);
         });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#current-image").attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
     });
 

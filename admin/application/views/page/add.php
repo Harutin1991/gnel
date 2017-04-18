@@ -74,9 +74,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <label class="control-label" for="image" ><?php echo $this->lang->line('Image'); ?></label>
-                                    <input name="image" value="<?php echo set_value('image'); ?>" type="file" class="form-control" id="image">
+                                <td class="upload_image_wrapper">
+                                    <label class="control-label" for="image" ><?php echo $this->lang->line('Chose image'); ?></label><br/>
+                                    <input name="image" value="<?php echo set_value('image'); ?>" class="form-control" type="file"  id="image">
+                                    <div><img src="<?php echo base_url('img/upload-icon.png'); ?>" alt="" id="upload_image"/></div>
                                     <div class="error"><?php echo form_error('image'); ?></div>
                                 </td>
                             </tr>
@@ -110,4 +111,24 @@
     $(function() {
         $('#myTab a:last').tab('show');
     });
+
+    $('#upload_image').click(function(event) {
+        $('#image').trigger('click');
+    });
+
+    $('#image').bind("change", function(e) {
+        readURL(this);
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $("#upload_image").attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
 </script>

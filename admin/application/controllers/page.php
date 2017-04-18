@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @property PageModel $PageModel
+ *
+ */
+
 class Page extends Main_controller {
 	
     public $layout = 'default';
@@ -44,6 +49,7 @@ class Page extends Main_controller {
                     $data['status'] = 0;
                 
                 $image_data = $this->_do_upload('image', 'pages');
+//                var_dump($image_data);die;
                 
                 if(isset($image_data['upload_data']))
                     $data['image'] = $image_data['upload_data']['file_name'];
@@ -64,7 +70,7 @@ class Page extends Main_controller {
         if(!isset($id)) show_404();
         $this->data['page'] = $this->PageModel->get('pages', $id);
         if($this->data['page'] == false) show_404();
-        
+
         if($this->input->post('Page')) {
             $this->form_validation->set_rules($this->PageModel->rules_edit());
             
@@ -100,6 +106,44 @@ class Page extends Main_controller {
         
 		$this->load->view('page/edit', $this->data);
 	}
+
+    public function subPages($id) {
+        $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
+        $this->load->view('page/indexSubPage', $this->data);
+    }
+
+    public function addSubPage($id) {
+        if(!isset($id)) show_404();
+
+        $this->data['parent_id'] = $id;
+
+        if($this->input->post('Page')) {
+            $this->form_validation->set_rules($this->PageModel->rules_add());
+
+            if($this->form_validation->run()) {
+                $data = $this->input->post('Page', true);
+
+                if(isset($data['status']))
+                    $data['status'] = 1;
+                else
+                    $data['status'] = 0;
+
+                $image_data = $this->_do_upload('image', 'pages');
+
+                if(isset($image_data['upload_data']))
+                    $data['image'] = $image_data['upload_data']['file_name'];
+
+                if(($id = $this->PageModel->insert('pages', $data)) != false) {
+                    $this->addLog('Added page with id: ' . $id);
+                }
+
+                $this->session->set_flashdata('message', 'add_success');
+                redirect("page/edit/$id", 'refresh');
+            }
+        }
+
+        $this->load->view('page/addsubpage', $this->data);
+    }
     
     private function uploadImage($input_name, $path) {
         if(isset($_FILES[$input_name])) {

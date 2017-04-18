@@ -174,3 +174,6 @@ $lang['Add partner']		 						        = "Добавить партнера";
 $lang['Link']				 						        = "Ссылка";
 $lang['Special']				 						    = "Специально";
 $lang['Ordering']				 						    = "Порядок";
+$lang['Create sub page']				 				    = "Создать подстраницу";
+$lang['Show sub pages']				 				        = "Показать подстраницы";
+
