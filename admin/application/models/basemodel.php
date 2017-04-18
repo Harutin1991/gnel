@@ -15,6 +15,16 @@ class BaseModel extends CI_Model {
         
         return array_fill_keys($fields, NULL);
     }
+
+    public function getMaxOrdering($table){
+        $query = "SELECT MAX(ordering) as ordering FROM $table";
+        $result = $this->db->query($query);
+        if($result->num_rows() > 0) {
+            $res = $result->row_array();
+            return $res['ordering'];
+        }
+
+    }
     
     protected function getPkName($table) {
         $query = "SHOW KEYS FROM $table WHERE Key_name = 'PRIMARY'";

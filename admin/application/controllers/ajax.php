@@ -596,6 +596,26 @@ class Ajax extends Main_controller {
 					exit;
 					break;	
 				}
+
+				case 'save_blog':{
+					$this->load->model('BlognewsModel');
+					$items = $this->input->post('items');
+					$data = array();
+					if(!empty($items)){
+						foreach($items as $item){
+							$data[] = array(
+											'id' => $item['id'],
+											'ordering' => $item['order']
+											);
+						}
+					}
+					$this->BlognewsModel->SaveBlogCategories($data);
+					echo json_encode(array('html' => 'true'));
+
+
+					exit;
+					break;
+				}
         }
     }
 

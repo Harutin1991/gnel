@@ -17,7 +17,7 @@
 $config['base_url']	= 'http://admin.gnel.loc/';
 $config['frontend_url']	= 'http://gnel.loc/';
 
-$config["frontend_path"] = 'C:/xampp/htdocs/www/gnel/gnel/';
+$config["frontend_path"] = 'C:/xampp/htdocs/gnel/gnel/';
 $config['images_path'] = $config["frontend_path"].'images/';
 
 $config['super_global_admin_id'] = 1;

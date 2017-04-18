@@ -90,27 +90,27 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <label class="control-label" ><?php echo $this->lang->line('Edit images'); ?> <a href="<?php echo base_url('blognews/addImages/' . $blognews['id']); ?>"><?php echo $this->lang->line('here'); ?></a></label>
-                                    <div class="image-box">
-                                        <div>
-                                            <?php //echo "<pre>";print_r($product); echo "</pre>"; ?>
-                                            <?php $img_url = isset($blognews['image']) && $blognews['image'] != '' ? $this->config->item('frontend_url') . 'images/blognews/' . $blognews['image'] : base_url('img/upload-icon.png'); ?>
-                                            <a href="<?php echo base_url('blognews/addImages/' . $blognews['id']); ?>"><img id="current-image" src="<?php echo $img_url; ?>" width="100" title="<?php echo $this->lang->line('Change image'); ?>" />
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
 <!--                            <tr>-->
-<!--                                <td class="upload_image_wrapper">-->
-<!--                                    --><?php //$img_url = $blognews['image'] != '' ? $this->config->item('frontend_url') . 'images/blognews/' . $blognews['image'] : base_url('img/upload-icon.png'); ?>
-<!--                                    <label class="control-label" for="image" >--><?php //echo $this->lang->line('Chose image'); ?><!--</label><br/>-->
-<!--                                    <input name="image" value="--><?php //echo set_value('image'); ?><!--" class="form-control" type="file"  id="image">-->
-<!--                                    <div><img src="--><?php //echo $img_url; ?><!--" alt="" id="current-image"/></div>-->
-<!--                                    <div class="error">--><?php //echo form_error('image'); ?><!--</div>-->
+<!--                                <td>-->
+<!--                                    <label class="control-label" >--><?php //echo $this->lang->line('Edit images'); ?><!-- <a href="--><?php //echo base_url('blognews/addImages/' . $blognews['id']); ?><!--">--><?php //echo $this->lang->line('here'); ?><!--</a></label>-->
+<!--                                    <div class="image-box">-->
+<!--                                        <div>-->
+<!--                                            --><?php ////echo "<pre>";print_r($product); echo "</pre>"; ?>
+<!--                                            --><?php //$img_url = isset($blognews['image']) && $blognews['image'] != '' ? $this->config->item('frontend_url') . 'images/blognews/' . $blognews['image'] : base_url('img/upload-icon.png'); ?>
+<!--                                            <a href="--><?php //echo base_url('blognews/addImages/' . $blognews['id']); ?><!--"><img id="current-image" src="--><?php //echo $img_url; ?><!--" width="100" title="--><?php //echo $this->lang->line('Change image'); ?><!--" />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 <!--                                </td>-->
 <!--                            </tr>-->
+                            <tr>
+                                <td class="upload_image_wrapper">
+                                    <?php $img_url = $blognews['image'] != '' ? $this->config->item('frontend_url') . 'images/blognews/' . $blognews['image'] : base_url('img/upload-icon.png'); ?>
+                                    <label class="control-label" for="image" ><?php echo $this->lang->line('Chose image'); ?></label><br/>
+                                    <input name="image" value="<?php echo set_value('image'); ?>" class="form-control" type="file"  id="image">
+                                    <div><img src="<?php echo $img_url; ?>" alt="" id="current-image"/></div>
+                                    <div class="error"><?php echo form_error('image'); ?></div>
+                                </td>
+                            </tr>
 							<tr>
 								<td>
 									<label class="control-label" for=""><?php echo $this->lang->line('Blognewscategories'); ?></label>

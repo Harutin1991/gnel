@@ -16,7 +16,7 @@
 */
 $config['base_url']	= 'http://gnel.loc/';
 
-$config["frontend_path"] = 'C:/xampp/htdocs/www/gnel/gnel/';
+$config["frontend_path"] = 'C:/xampp/htdocs/gnel/gnel/';
 $config['images_path'] = $config["frontend_path"].'images/';
 /*
 |--------------------------------------------------------------------------

@@ -37,7 +37,6 @@ class Blognews extends Main_controller {
     }
 
     public function index() {
-        //$this->data['blognews'] = $this->BlognewsModel->getAll('blognews');
 		if (!isset($_COOKIE['bn_string'])) {
             setcookie('bn_string', $this->bn_string, time() + (86400 * 30 * 7), "/");
         } else {
@@ -62,8 +61,6 @@ class Blognews extends Main_controller {
     }
 
     public function add() {
-//        var_dump($image_data = $this->_do_upload('image', 'blognews')); die;
-
         if ($this->input->post('Blognews')) {
             $this->form_validation->set_rules($this->BlognewsModel->rules());
 

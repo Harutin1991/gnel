@@ -36,6 +36,11 @@ class MultilangModel extends BaseModel {
     public function insert($table, $data) {
         $pk = $this->getPkName($table);
         $attributes = $this->getAttributes($table);
+        $maxorder = 1;
+        $maxorder = $this->getMaxOrdering($table);
+        $maxorder = intval($maxorder) + 1;
+//        var_dump($maxorder); die;
+
         //insert default values in main table
         $default_language = $this->getDefultLanguage();
         $data_def = array();
@@ -46,6 +51,7 @@ class MultilangModel extends BaseModel {
         //add insert datetime
         $data_def["date_created"] = date("Y-m-d H:i:s", time());
         $data_def["date_modified"] = $data_def["date_created"];
+        $data_def["ordering"] = $maxorder;
 
         $attributes = array_intersect_key($data_def, $attributes);
         if (count($attributes) == 0)

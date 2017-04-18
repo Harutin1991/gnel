@@ -3,6 +3,11 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+ * @property BlogcategoriesModel $BlogcategoriesModel
+ *
+ */
+
 class Blogcategories extends Main_controller {
 
     public $layout = 'default';

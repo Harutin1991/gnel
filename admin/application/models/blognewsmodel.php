@@ -240,6 +240,11 @@ class BlognewsModel extends MultilangModel {
         return $id;
     }
 
+    public function SaveBlogCategories($data = array()) {
+        $this->db->update_batch('blognews', $data, 'id');
+
+    }
+
 }
 
 ?>
