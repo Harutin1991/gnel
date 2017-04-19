@@ -50,7 +50,6 @@ class LanguagesModel extends MultilangModel {
     }
     public function getAllLanguages($table, $order_by='ASC') {
         $pk = $this->getPkName($table);
-        
         $str_select = $table.'.*';
         
         foreach($this->attributes_t as $attr) {

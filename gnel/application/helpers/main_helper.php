@@ -32,11 +32,11 @@ function treealize($items, $identifier = 'id', $parentIdentifier = 'parent_id', 
 
 function cmp($a, $b) {
     if (is_array($a)) {
-        if ($a['order'] == $b['order']) {
+        if ($a['ordering'] == $b['ordering']) {
             return 0;
         }
 
-        return ($a['order'] < $b['order']) ? -1 : 1;
+        return ($a['ordering'] < $b['ordering']) ? -1 : 1;
     } else if (is_object($a)) {
         if ($a->order == $b->order) {
             return 0;
@@ -326,11 +326,13 @@ function drawMenu($top_menu_pages, $attributes = array()) {
         }
     }
     $html = '<ul ' . $attr . '>';
-    $i = 1;
+    $i = 0;
     $count = count($top_menu_pages);
     if ($count > 0) {
         foreach ($top_menu_pages AS $page) {
-            $html .= '<li' . ($i++ == $count ? ' class="last-item"' : '') . '>';
+            $i++;
+
+            $html .= '<li' . ($i%4 == 0 ? ' class="last-item"' : '') . '>';
 
             //var_dump(strpos($page['url'], 'http://'));echo "<br/>";
             if (strpos($page['url'], '/') === 0) {
@@ -345,6 +347,7 @@ function drawMenu($top_menu_pages, $attributes = array()) {
                 $html .= drawMenu($page['children']);
             }
             $html .= '</li>';
+
         }
     }
     $html .= '</ul>';

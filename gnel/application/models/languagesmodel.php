@@ -64,6 +64,29 @@ class LanguagesModel extends MultilangModel {
         
         return array();
     }
+
+    public function getAllLanguages($table, $order_by='ASC') {
+        $pk = $this->getPkName($table);
+        $str_select = $table.'.*';
+
+        foreach($this->attributes_t as $attr) {
+            $str_select .= ', ';
+            $str_select .= $this->table_t.'.'.$attr;
+        }
+
+        $default_language = $this->getDefultLanguage();
+        $query = $this->db->select($str_select)
+            ->from($table)
+            ->where("status", "1")
+            ->join($this->table_t, $this->table_t.'.'.$this->foreign_key.'='.$table.'.'.$pk.' AND '.$this->table_t.'.'.$this->lang_key.' = '.'"'.$default_language.'"', 'left')
+            ->order_by("id", $order_by)
+            ->get();
+
+        if($query->num_rows() > 0)
+            return $query->result();;
+
+        return false;
+    }
     
 }
 

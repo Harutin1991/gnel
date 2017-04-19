@@ -53,8 +53,8 @@
 	  <?php } ?>
     </div>
   </div>
-  <?php if(!empty($blognews)) { ?>
-  <?php
+  <?php if(!empty($blognews)) {
+
   // get show page range
   $show_pages = array();
   $show_page_count = 10;

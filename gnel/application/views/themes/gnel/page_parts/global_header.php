@@ -9,4 +9,4 @@
 <?php $this->load->view('themes/gnel/page_parts/header.php');?>
 <?php //$this->load->view('themes/gnel/page_parts/top_menu.php');?>
 
-  <div class="clear"></div>
+

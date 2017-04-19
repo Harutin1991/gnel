@@ -21,35 +21,41 @@
 
         <div class="col-sm-9 col-xs-12 footer-menu">
             <div class="fm">
-                <ul class="col-sm-3 col-xs-6">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Our works</a></li>
-                    <li><a href="#">Our contacts</a></li>
-                    <li><a href="#">Requisites</a></li>
-                    <li><a href="#">Our partners</a></li>
-                </ul>
-                <ul class="col-sm-3 col-xs-6">
-                    <li><a href="#">Sell from us</a></li>
-                    <li><a href="#">Advertising</a></li>
-                    <li><a href="#">Partnership</a></li>
-                    <li><a href="#">Other services</a></li>
-                </ul>
-            </div>
-            <div class="fm">
-                <ul class="col-sm-3 col-xs-6">
-                    <li><a href="#">Recipes</a></li>
-                    <li><a href="#">Usefull tips</a></li>
-                    <li><a href="#">How to lose weight</a></li>
-                    <li><a href="#">Healthy food</a></li>
-                    <li><a href="#">Recommendations</a></li>
-                </ul>
-                <ul class="col-sm-3 col-xs-6">
-                    <li><a href="#">Our news</a></li>
-                    <li><a href="#">For media</a></li>
-                    <li><a href="#">Weather forecast</a></li>
-                    <li><a href="#">Currency exchange</a></li>
-                    <li><a href="#">Our blog</a></li>
-                </ul>
+
+                <?php echo drawMenu($menu['Information'], array("class" => "menu_footer_item text_item")); ?>
+
+<!--                <ul class="col-sm-3 col-xs-6">-->
+<!--                    <li><a href="#">About us</a></li>-->
+<!--                    <li><a href="#">Our works</a></li>-->
+<!--                    <li><a href="#">Our contacts</a></li>-->
+<!--                    <li><a href="#">Requisites</a></li>-->
+<!--                    <li><a href="#">Our partners</a></li>-->
+<!--                </ul>-->
+<!--                <ul class="col-sm-3 col-xs-6">-->
+<!--                    <li><a href="#">Sell from us</a></li>-->
+<!--                    <li><a href="#">Advertising</a></li>-->
+<!--                    <li><a href="#">Partnership</a></li>-->
+<!--                    <li><a href="#">Other services</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="fm">-->
+<!--                <ul class="col-sm-3 col-xs-6">-->
+<!--                    <li><a href="#">Recipes</a></li>-->
+<!--                    <li><a href="#">Usefull tips</a></li>-->
+<!--                    <li><a href="#">How to lose weight</a></li>-->
+<!--                    <li><a href="#">Healthy food</a></li>-->
+<!--                    <li><a href="#">Recommendations</a></li>-->
+<!--                </ul>-->
+<!--                <ul class="col-sm-3 col-xs-6">-->
+<!--                    <li><a href="#">Our news</a></li>-->
+<!--                    <li><a href="#">For media</a></li>-->
+<!--                    <li><a href="#">Weather forecast</a></li>-->
+<!--                    <li><a href="#">Currency exchange</a></li>-->
+<!--                    <li><a href="--><?php //echo base_url('blog')?><!--">Our blog</a></li>-->
+<!--                </ul>-->
+<!--                <ul class="col-sm-3 col-xs-6">-->
+<!--                    <li><a href="--><?php //echo base_url('blog')?><!--">Our blog</a></li>-->
+<!--                </ul>-->
             </div>
         </div>
     </div>

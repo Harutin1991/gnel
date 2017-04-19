@@ -3,6 +3,13 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+ * @property MultilangModel $MultilangModel
+ * @property BlogModel $BlogModel
+ * @property BaseModel $BaseModel
+ *
+ */
+
 class Blog extends MY_Controller {
 
     protected $tamplate = 'gnel/blog';
@@ -15,7 +22,6 @@ class Blog extends MY_Controller {
         
         $this->load->model('MultilangModel');
         $this->load->model('BlogModel');
-        $this->load->model('BaseModel');
         $this->load->helper('main_helper');
         $get = $this->input->get(NULL, true);
 
@@ -29,7 +35,6 @@ class Blog extends MY_Controller {
     public function index($id = NULL) {
         //redirect(site_url(''));
         $page_num = $this->input->get('page', true);
-       // echo "<pre>";var_dump($this->BlogModel->getSpecialBlognews());exit;
         $this->data["blognews"] = array();
         $this->data['special_news'] = array();
         $this->data['old_id'] = null;
@@ -38,8 +43,9 @@ class Blog extends MY_Controller {
         }elseif(!$this->input->get('page')){
             $this->data["blognews"] = $this->BlogModel->getLastBlognews();
         }
+//        echo "<pre>";print_r($this->data["blognews"]);exit;
+
         $special_news = $this->BlogModel->getSpecialBlognews();
-        //echo "<pre>";var_dump($special_news[0]);exit;
        if(!empty($special_news) && isset($special_news[0]) ){
            $this->data['special_news'] = $special_news[0];
            $this->data['first_item_id'] = $this->data['special_news']->id;

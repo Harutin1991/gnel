@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Բեյբիբայ ադմին</title>
+        <title>Գնել ադմին</title>
         <meta name="robots" content="noindex,nofollow"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
@@ -47,7 +47,7 @@
         <![endif]-->
 
         <!-- The fav icon -->
-        <link rel="shortcut icon" href="img/favicon.ico">
+<!--        <link rel="shortcut icon" href="img/favicon.ico">-->
 
     </head>
 
@@ -62,7 +62,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"> <img alt="Logo" src="<?php echo site_url('layout_data/img/babybuy_logo.png'); ?>" class="hidden-xs"/>
+                <a class="navbar-brand" href="index.html">Gnel
+<!--                    <img alt="Logo" src="--><?php //echo site_url('layout_data/img/babybuy_logo.png'); ?><!--" class="hidden-xs"/>-->
                     <span style="font-size: 15px;"></span></a>
 
                 <!-- user dropdown starts -->
@@ -99,7 +100,7 @@
 <!--                </div>-->
 
                 <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                    <li><a target="_blank" href="http://babybuy.am"><i class="glyphicon glyphicon-globe"></i>Բացել կայքը</a></li>
+                    <li><a target="_blank" href="http://gnel.loc"><i class="glyphicon glyphicon-globe"></i>Բացել կայքը</a></li>
 <!--                    <li class="dropdown">-->
 <!--                        <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i>Կարգավորումներ <span-->
 <!--                                class="caret"></span></a>-->
@@ -178,10 +179,10 @@
             </div>
 
             <footer class="row">
-                <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="" target="_blank">Esterox</a>  <?php echo date("Y"); ?></p>
+                <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="" target="_blank">Astudio</a>  <?php echo date("Y"); ?></p>
 
                 <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
-                        href="http://www.esterox.am">Esterox</a></p>
+                        href="http://www.astudio.am">Astudio</a></p>
             </footer>
 
         </div><!--/.fluid-container-->

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Բեյբիբայ ադմին</title>
+    <title>Գնել ադմին</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Artashes Papikyan">
@@ -34,7 +34,7 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="<?php echo site_url('layout_data/img/favicon.ico'); ?>">
+<!--    <link rel="shortcut icon" href="--><?php //echo site_url('layout_data/img/favicon.ico'); ?><!--">-->
 
 </head>
 
@@ -44,7 +44,7 @@
         
     <div class="row">
         <div class="col-md-12 center login-header">
-            <h2>Բեյբիբայ ադմին</h2>
+            <h2>Գնել ադմին</h2>
         </div>
         <!--/span-->
     </div><!--/row-->

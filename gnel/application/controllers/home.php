@@ -1,5 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @property LanguagesModel $LanguagesModel
+ * @property SettingsModel $SettingsModel
+ *
+ */
+
 class Home extends MY_Controller {
 
     protected $tamplate = 'gnel/main';
@@ -15,8 +21,9 @@ class Home extends MY_Controller {
 		$this->load->model('UserModel');
 
 
-        //$this->data['languages'] = $this->LanguagesModel->getAllLanguages('languages');
-        //$this->data['default_language'] = $this->SettingsModel->get('default_language');
+        $this->data['languages'] = $this->LanguagesModel->getAllLanguages('languages');
+        $this->data['default_language'] = $this->SettingsModel->get('default_language');
+
 
     }
 	public function index() {
@@ -48,9 +55,6 @@ class Home extends MY_Controller {
 
         $this->data['last_products'] = $this->MultilangModel->getProducts();
         $this->data['special_products'] = $this->MultilangModel->getSpecialProducts();
-
-//            echo '<pre>'; print_r($this->data['last_products']); exit();
-
         
         $this->data['brands'] = $this->BrandModel->getAllBrands();
         if ($this->_is_logged_in()) {

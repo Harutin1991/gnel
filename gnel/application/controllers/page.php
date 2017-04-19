@@ -1,9 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @property MultilangModel $MultilangModel
+ * @property PageModel $PageModel
+ *
+ */
+
 class Page extends MY_Controller {
 
     protected $tamplate = 'gnel/product';
-    public $menu_name = 'Menu1';
+//    public $menu_name = 'Menu1';
     
     function __construct(){
 		parent::__construct();
@@ -14,13 +20,15 @@ class Page extends MY_Controller {
 		$this->data['last_products'] = $this->MultilangModel->getProducts();
     }
 	public function index($title = 'default') {
-        
+
         $this->data['title'] = $title;
 		$this->load->view('page/index', $this->data);
 	}
 	
 	public function item($url = 'Information') {
+
         $this->data['page'] = $this->PageModel->getPageData($url);
+
         if(empty($this->data['page'])) {
             redirect(site_url('page/Information'));
         }

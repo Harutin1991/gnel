@@ -32,11 +32,11 @@ function treealize($items, $identifier = 'id', $parentIdentifier = 'parent_id', 
 }
 
 function cmp($a, $b) {
-    if ($a['order'] == $b['order']) {
+    if ($a['ordering'] == $b['ordering']) {
         return 0;
     }
 
-    return ($a['order'] < $b['order']) ? -1 : 1;
+    return ($a['ordering'] < $b['ordering']) ? -1 : 1;
 }
 
 function Sort_Multidimension_Array(&$categories_tree) {

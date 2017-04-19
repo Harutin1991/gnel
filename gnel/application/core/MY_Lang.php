@@ -1,13 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class MY_Lang extends CI_Lang
 {
-
     function __construct()
     {
         parent::__construct();
     }
-
     /**
      * Fetch a single line of text from the language array. Takes variable number
      * of arguments and supports wildcards in the form of '%1', '%2', etc.
@@ -51,11 +48,7 @@ class MY_Lang extends CI_Lang
             //if no arguments given, no language line available
             $line = false;
         }
-
         return $line;
     }
-
-
 }
-
 ?> 
