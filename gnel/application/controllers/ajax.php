@@ -258,7 +258,7 @@ class Ajax extends MY_controller {
                 $this->load->model('OrderModel');
                 $result = $this->OrderModel->orderCall($phone);
                 if($result) {
-                    $from = "call@babybuy.am";
+                    $from = "call@gnel.am";
                     $to = "babybuy_email@mail.ru";
                     $subject = "Call_" . $phone;
                     $message = "Call to: ".$phone;

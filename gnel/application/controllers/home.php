@@ -2,7 +2,7 @@
 
 class Home extends MY_Controller {
 
-    protected $tamplate = 'babybuy/main';
+    protected $tamplate = 'gnel/main';
     function __construct() {
         parent::__construct();
 

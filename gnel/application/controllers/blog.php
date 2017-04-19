@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Blog extends MY_Controller {
 
-    protected $tamplate = 'babybuy/blog';
+    protected $tamplate = 'gnel/blog';
     public $blg_display = 'list';
     public $blg_perpage = 7;
     public $br_category = 0;
@@ -184,9 +184,9 @@ class Blog extends MY_Controller {
 
                    // send email to admin about comment
 
-                   $to = "babybuy.am@gmail.com";
+                   $to = "gnel.am@gmail.com";
                    if (filter_var($to, FILTER_VALIDATE_EMAIL)) {
-                       $from = 'blogcomment@babybuy.am';
+                       $from = 'blogcomment@gnel.am';
                        $subject = $this->lang->line('New comment');
                        $comment_email_data['comment'] = $data['comment'];
                        $comment_email_data['comment_date'] = $data['comment_date'];

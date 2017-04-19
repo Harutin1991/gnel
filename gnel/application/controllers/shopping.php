@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Shopping extends My_controller {
 
-    protected $tamplate = 'babybuy/main';
+    protected $tamplate = 'gnel/main';
     public $data = array();
 
     public function __construct() {
@@ -132,13 +132,13 @@ class Shopping extends My_controller {
 
                     $html_user = $this->load->view('email/order_user', $this->data, true);
                     
-                    $user_subject = $this->lang->line('Order from babybuy.am');
-                    if ($this->send_mail('order@babybuy.am', $post["email"], $user_subject, $html_user)) {
+                    $user_subject = $this->lang->line('Order from gnel.am');
+                    if ($this->send_mail('order@gnel.am', $post["email"], $user_subject, $html_user)) {
                         $order_cart = $this->get_order_ammount($this->data);
                         $this->data['current_order'] = $this->OrderModel->getOrderDetails($this->data['order_id'], false);
                         $html_admin = $this->load->view('email/order_admin', $this->data, true);
                         $admin_subject = 'baby_order_'.$order_cart['total'].'_'.$order_cart['quantity'];
-                        $this->send_mail('order@babybuy.am', 'babybuy_email@mail.ru', $admin_subject, $html_admin, $admin_subject);
+                        $this->send_mail('order@gnel.am', 'babybuy_email@mail.ru', $admin_subject, $html_admin, $admin_subject);
                         $this->data['email_sent'] = true;
                     }
                     if($order_points != 0){
@@ -184,7 +184,7 @@ class Shopping extends My_controller {
         $this->data['order_id'] = '5';
         $this->data['current_order'] = $this->OrderModel->getOrderDetails($this->data['order_id'], false);
         $html = $this->ci->load->view('email/order_admin', $this->data, TRUE);
-        //$html = $this->template->load('babybuy/email', 'email/forgotpassword', $this->data, true);
+        //$html = $this->template->load('gnel/email', 'email/forgotpassword', $this->data, true);
 
         echo $html;
         exit;
@@ -193,7 +193,7 @@ class Shopping extends My_controller {
     public function sendordermail() {
         $this->ci = & get_instance();
         $html = $this->ci->load->view('email/order_user', $this->data, TRUE);
-        $this->send_mail('order@babybuy.am', 'adpox@mail.ru', $this->lang->line('Order from babybuy.am'), $html);
+        $this->send_mail('order@gnel.am', 'adpox@mail.ru', $this->lang->line('Order from gnel.am'), $html);
         echo "mail already sent";
         exit;
     }

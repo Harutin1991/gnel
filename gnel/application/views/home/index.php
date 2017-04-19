@@ -1,171 +1,290 @@
-
-<div id="content">
-    <div class="flex-container" data-snap-ignore="true">
-        <?php $this->load->view('themes/babybuy/page_parts/flexslider.php'); ?>
-    </div>
-
-    <div class="banner-holder">
-        <div class="banner banner1">
-            <div class="login_block_img">
-                <img src="<?php echo base_url(); ?>themes/babybuy/image/example-banner/banner2.png" alt="" title="">
+<div class="col-xs-12 slider-container  padding-lr0">
+    <div class="delivery col-xs-12 col-sm-2  padding-lr0">
+        <div class="col-md-12 padding-lr0 col-xs-10 container-left">
+            <div class="text-center">
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/e_delivery.png" />
+                    <p>Express Delivery</p>
+                </a>
             </div>
-            <div class="login_block">
-                <div class="for-wrong-login">
-                    <?php if (isset($logged) && $logged) { ?>
-                        <div class="loged_in_block">
-                            <?php // echo "<pre>"; var_dump($user); ?>
-
-                            <?php $img_url = $user['image'] != '' ? base_url('images/users/' . $user['id'] . '/' . $user['image']) : base_url('images/icons/user-icon.png'); ?>
-
-                            <a href="<?php echo site_url('account'); ?>"><img src="<?php echo $img_url; ?>" alt="User image" id="user_image" alt="" title=""/></a>
-                            <span>
-                                <p class="login_name"><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></p>
-                                <p class="login_mail"><?php echo $user['email']; ?></p>
-                                <p class="login_points"><?php echo  !$this->session->userdata('total_points') ? ' 0' : $this->session->userdata('total_points'); echo '  '.$this->lang->line('Points'); ?></p>
-                            </span>
-                        </div>
-                    <?php } else { ?>
-                        <form action="" method="post">
-                            <table class="form">
-                                <tbody>
-                                    <tr>
-                                        <td class="desc"> <?php echo $this->lang->line('Email:'); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="txtinput"><span><input type="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"/></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="desc"> <?php echo $this->lang->line('Password') . $this->lang->line(':'); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="txtinput"><input type="password" name="password" value=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="forg_pass"><a href="<?php echo site_url('account/forgotpassword'); ?>"><?php echo $this->lang->line('Forgotten Password ?'); ?></a> / <a href="<?php echo site_url('account/register'); ?>"><?php echo $this->lang->line('Register'); ?></a> </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                            <div class="right smaller">
-                                <input type="submit" name="login" value="<?php echo $this->lang->line('Login'); ?>" class="button">
-
-
-                            </div>
-                        </form>
-                    <?php } ?>
+            <div class="text-center">
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/r_delivery.png" />
+                    <p>Regular Delivery</p>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/r_delivery.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="slider col-xs-12 col-sm-10 padding-r0">
+        <img class="todays" src="/themes/gnel/images/site-images/t.png">
+        <div id="slides">
+            <div class="col-xs-12 padding-lr0">
+                <div class="col-xs-12 col-sm-8">
+                    <img class="s-img" src="/themes/gnel/images/site-images/s.png" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
                 </div>
-                <?php if (isset($wrong_login)) { ?>
-                    <div class="wrong-login"><?php echo $this->lang->line('Please insert right data'); ?> </div>
-                <? } ?>
-            </div>
-
-
-        </div>
-        <div class="banner banner2">
-            <div><img src="<?php echo base_url(); ?>themes/babybuy/image/example-banner/banner1.png" alt="" title=""> </div>
-<!--            <div class="login_block">-->
-<!---->
-<!--                <p class="del_with_love">-->
-<!--                    <a href="--><?php //echo site_url('delivery/'); ?><!--">--><?php //echo $this->lang->line('We delivery with love'); ?><!--</a>-->
-<!--                </p>-->
-<!--            </div>-->
-            <div class="login_block home_blog_block">
-                <a href="<?php echo site_url('blog'); ?>"> <img src="<?php echo base_url(); ?>themes/babybuy/image/blog_block.png" alt="blog" title="blog" /></a>
-                <p class="del_with_love">
-                    <a href="<?php echo site_url('blog'); ?>"><?php echo $this->lang->line('New page in Our website'); ?></a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div>
-            <h2 class="title_module h1_sim"><span><?php echo $this->lang->line('Special Products'); ?></span></h2>
-            <div class="box-content">
-                <?php foreach ($special_products AS $product) { ?>
-                    <div class="box-product box-product_special image-product-<?php echo $product->prod_id; ?>">
-                        <a class="image" href="<?php echo product_url($product->prod_id, $product->name); ?>" title="<?php echo $this->lang->line('View more'); ?>">
-                            <img src="<?php echo thumbImg('images/product/' . $product->prod_id . '/' . $product->image, 300, 300); ?>" alt="<?php echo $product->name; ?>">
-                        </a>
-                            <?php if($product->percent_off != 0) { ?>
-                                <span class="new">-<?php echo $product->percent_off ; ?>%</span>
-                            <?php } ?>
-                            <?php if($product->amount_off != 0) {  ?>
-                                <span class="new"><?php echo $this->lang->line('Sale'); ?></span>
-                            <?php } ?>
-                        <h3 class="name"><a href="<?php echo product_url($product->prod_id, $product->name); ?>" title="<?php echo $product->name; ?>"><?php echo $product->name; ?></a></h3>
-                        <?php if($product->percent_off == 0 && $product->amount_off == 0) {  ?>
-                            <p class="wrap_price"> <span class="price"><?php echo $product->price; ?><span class="price_val"><?php echo $this->lang->line('AMD'); ?></span></span> </p>
-                        <?php } else {?>
-                            <?php if($product->percent_off != 0) { ?>
-                                <p class="wrap_price">
-                                    <span class="price-old"><?php echo $product->price; ?></span>
-                                    <span class="price-new"><?php echo (int)$product->price - ((int)$product->price * (int)$product->percent_off/100); ?> <?php echo $this->lang->line('AMD'); ?></span>
-                                </p>
-                            <?php } ; ?>
-                            <?php if($product->amount_off != 0) { ?>
-                                <p class="wrap_price">
-                                    <span class="price-old"><?php echo $product->price; ?></span>
-                                    <span class="price-new"><?php echo (int)$product->price - (int)$product->amount_off ; ?> <?php echo $this->lang->line('AMD'); ?></span>
-                                </p>
-                            <?php } ?>
-                        <?php } ?>
-                        <p class="submit">
-                            <input type="button" value="<?php echo $this->lang->line('Add to Cart'); ?>" class="button"  name="add-to-cart" prod-id="<?php echo $product->product_id; ?>">
-                        </p>
+                <div class="col-xs-12 col-sm-4 padding-r0">
+                    <div class="col-xs-12 s-info padding-r0" >
+                        <h3 class="text-right">Product name</h3>
+                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+                        <a href="#" class="see-more">See more...</a>
                     </div>
-                <?php } ?>
-
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="box">
-        <div>
-            <h1 class="title_module"><span><?php echo $this->lang->line('Latest Products'); ?></span></h1>
-            <div class="box-content">
-                <?php foreach ($last_products AS $product) { ?>
-                    <div class="box-product box-content_latest image-product-<?php echo $product->prod_id; ?>">
-                        <a class="image" href="<?php echo product_url($product->prod_id, $product->name); ?>" title="<?php echo $this->lang->line('View more'); ?>">
-                            <img src="<?php echo thumbImg('images/product/' . $product->prod_id . '/' . $product->image, 300, 300); ?>" alt="<?php echo $product->name; ?>">
-                        </a>
-                            <?php if($product->percent_off != 0) { ; ?>
-                                <span class="new">-<?php echo $product->percent_off ; ?>%</span>
-                            <?php } ; ?>
-                            <?php if($product->amount_off != 0) { ; ?>
-                                <span class="new"><?php echo $this->lang->line('Sale'); ?></span>
-                            <?php } ; ?>
-                        <h3 class="name"><a href="<?php echo product_url($product->prod_id, $product->name); ?>" title="<?php echo $product->name; ?>"><?php echo $product->name; ?></a></h3>
-                        <?php if($product->percent_off == 0 && $product->amount_off == 0) { ; ?>
-                            <p class="wrap_price"> <span class="price"><?php echo $product->price; ?><span class="price_val"><?php echo $this->lang->line('AMD'); ?></span></span> </p>
-                        <?php } else {; ?>
-                            <?php if($product->percent_off != 0) { ; ?>
-                                <p class="wrap_price">
-                                    <span class="price-old"><?php echo $product->price; ?></span>
-                                    <span class="price-new"><?php echo (int)$product->price - ((int)$product->price * (int)$product->percent_off/100); ?> <?php echo $this->lang->line('AMD'); ?></span>
-                                </p>
-                            <?php } ; ?>
-                            <?php if($product->amount_off != 0) { ; ?>
-                                <p class="wrap_price">
-                                    <span class="price-old"><?php echo $product->price; ?></span>
-                                    <span class="price-new"><?php echo (int)$product->price - (int)$product->amount_off ; ?><?php echo $this->lang->line('AMD'); ?></span>
-                                </p>
-                            <?php } ; ?>
-                        <?php }; ?>
-                        <p class="submit">
-                            <input type="button" value="<?php echo $this->lang->line('Add to Cart'); ?>" class="button"  name="add-to-cart" prod-id="<?php echo $product->product_id; ?>">
-                        </p>
+            <div class="col-xs-12 padding-lr0">
+                <div class="col-xs-12 col-sm-8">
+                    <img class="s-img" src="/themes/gnel/images/site-images/s.png" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                </div>
+                <div class="col-xs-12 col-sm-4 padding-r0">
+                    <div class="col-xs-12 s-info padding-r0" >
+                        <h3 class="text-right">Product name</h3>
+                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+                        <a href="#" class="see-more">See more...</a>
                     </div>
-                <?php  } ?>
-
+                </div>
             </div>
         </div>
     </div>
-    <div class="clear"></div>
-    <?php $this->load->view('themes/babybuy/page_parts/flexcarousel.php'); ?>
 </div>
-
-
-
-
-
-
-
+<div class="products col-xs-12 padding-lr0">
+    <div class="col-xs-10 col-sm-12 padding-lr0">
+        <div class="col-sm-2 col-xs-10 padding-lr0 products-category text-center">
+            <a href="#" class="col-sm-10 col-xs-12">
+                <i class="arrow right"></i>
+                <img src="/themes/gnel/images/site-images/p1.png" />
+                <p>Product Name</p>
+            </a>
+        </div>
+        <section class="regular slider col-sm-10 text-center col-xs-12">
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p2.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p3.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p4.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p5.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p6.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p7.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p2.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p3.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-10 col-sm-12 padding-lr0">
+        <div class="col-sm-2 col-xs-10 padding-lr0 products-category text-center">
+            <a href="#" class="col-sm-10 col-xs-12">
+                <i class="arrow right"></i>
+                <img src="/themes/gnel/images/site-images/p8.png" />
+                <p>Product Name</p>
+            </a>
+        </div>
+        <section class="regular slider col-sm-10 text-center">
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p9.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p10.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p11.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p12.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p13.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p14.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p8.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p9.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-10 col-sm-12 padding-lr0">
+        <div class="col-sm-2 col-xs-10 padding-lr0 products-category text-center">
+            <a href="#" class="col-sm-10 col-xs-12">
+                <i class="arrow right"></i>
+                <img src="/themes/gnel/images/site-images/p15.png" />
+                <p>Product Name</p>
+            </a>
+        </div>
+        <section class="regular slider col-sm-10 text-center">
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p16.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p17.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p18.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p19.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p20.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p21.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p15.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p16.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-10 col-sm-12 padding-lr0">
+        <div class="col-sm-2 col-xs-10 padding-lr0 products-category text-center">
+            <a href="#" class="col-sm-10 col-xs-12">
+                <i class="arrow right"></i>
+                <img src="/themes/gnel/images/site-images/p22.png" />
+                <p>Product Name</p>
+            </a>
+        </div>
+        <section class="regular slider col-sm-10 text-center">
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p23.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p24.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p25.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p26.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p27.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p28.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p22.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="/themes/gnel/images/site-images/p23.png" />
+                    <p>Product Name</p>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>

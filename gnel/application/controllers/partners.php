@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Partners extends MY_Controller {
 
-    protected $tamplate = 'babybuy/product';
+    protected $tamplate = 'gnel/product';
     public $cat_display = 'list';
     public $cat_perpage = 15;
 

@@ -97,7 +97,7 @@ $lang['First']												= "First";
 $lang['Last']												= "Last";
 $lang['Next']												= "Next";
 $lang['Previous']											= "Previous";
-//babybuy
+//gnel
 $lang['Latest Products']									= "Latest Products";
 $lang['Special Products']									= "Special Products";
 $lang['Add to Cart']									    = "Add to Cart";
@@ -249,7 +249,7 @@ $lang['Delivery pending'] 	                                = "Pending";
 $lang['Pending'] 	                                		= "Pending";
 $lang['Pending_min'] 	                                	= "Pending";
 $lang['Cancelled'] 	                                        = "Cancelled";
-$lang['Order from babybuy.am'] 	                            = "Order from Babybuy.am";
+$lang['Order from gnel.am'] 	                            = "Order from Babybuy.am";
 $lang['About us text'] = "<p> Our aim is to make all children's products in Armenia 
 							available for parents. We have created an environment where you can get 
 							acquainted with the goods, their prices and make purchases. </p>

@@ -11,7 +11,7 @@
 				<header style="color: #205e75; font-size:26px;">
 				                        <div id="logo" style="float:left;">
                             <a href="<?php echo site_url(); ?>">
-                                <img style="width:150px; margin-right:30px;" src="<?php echo base_url('themes/babybuy/image/babybuy_logo.png'); ?>" title="babybuy" alt="logo">
+                                <img style="width:150px; margin-right:30px;" src="<?php echo base_url('themes/gnel/image/babybuy_logo.png'); ?>" title="babybuy" alt="logo">
                             </a>
                         </div>
 						<div  style="float:left; font-size:26px; line-height: auto; margin-top:25px;">

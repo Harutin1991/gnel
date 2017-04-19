@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Product extends MY_Controller {
 
-    protected $tamplate = 'babybuy/product';
+    protected $tamplate = 'gnel/product';
     public $cat_display = 'list';
     public $cat_perpage = 15;
 
@@ -75,7 +75,7 @@ class Product extends MY_Controller {
                 $repr_details = $this->ProductsModel->getProductRepresantativeDetails($id);
                 $to = $repr_details->email;
                 if (filter_var($to, FILTER_VALIDATE_EMAIL)) {
-                    $from = 'comment@babybuy.am';
+                    $from = 'comment@gnel.am';
                     $subject = $this->lang->line('New comment');
                     $comment_email_data['comment'] = $data['comment'];
                     $comment_email_data['comment_date'] = $data['comment_date'];
@@ -91,7 +91,7 @@ class Product extends MY_Controller {
         }
 
 //        if(isset($_GET['dev'])) {
-//           $from = 'comment@babybuy.am';
+//           $from = 'comment@gnel.am';
 //                    $subject = $this->lang->line('New comment');
 //                    $data['comment'] = 'comment descripton';
 //                    $data['comment_date'] = date('Y-m-d H:i:s', time());

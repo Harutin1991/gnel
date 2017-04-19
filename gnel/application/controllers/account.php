@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Account extends My_controller {
 
-    protected $tamplate = 'babybuy/account';
+    protected $tamplate = 'gnel/account';
     public $data = array();
 
     public function __construct() {
@@ -142,7 +142,7 @@ class Account extends My_controller {
                     $this->data['code'] = $this->UserModel->addValidationCodeToEmail($post['email']);
                     $html = $this->load->view('email/useractivate', $this->data, true);
 
-                    if ($this->send_mail('admin@babybuy.am', $post["email"], 'Account Activation', $html)) {
+                    if ($this->send_mail('admin@gnel.am', $post["email"], 'Account Activation', $html)) {
                         $this->data['email_sent'] = true;
                     }
                     redirect(site_url('account/emailactivate'));
@@ -251,7 +251,7 @@ class Account extends My_controller {
                     $this->data['code'] = $this->UserModel->getValidationCodeToEmail($post['email']);
                     $html = $this->load->view('email/useractivate', $this->data, true);
 
-                    if ($this->send_mail('admin@babybuy.am', $post["email"], 'Account Activation', $html)) {
+                    if ($this->send_mail('admin@gnel.am', $post["email"], 'Account Activation', $html)) {
                         $this->data['activation_email_sent'] = true;
                         $this->data['email_sent'] = true;
                     }
@@ -260,7 +260,7 @@ class Account extends My_controller {
                     if ($this->data['new_pass']) {
                         $html = $this->load->view('email/forgotpassword', $this->data, true);
 
-                        if ($this->send_mail('admin@babybuy.am', $post["email"], 'New Password', $html)) {
+                        if ($this->send_mail('admin@gnel.am', $post["email"], 'New Password', $html)) {
                             $this->data['password_email_sent'] = true;
                             $this->data['email_sent'] = true;
                         }
@@ -344,7 +344,7 @@ class Account extends My_controller {
         $this->data['code'] = 111111;
         $this->ci = & get_instance();
         $html = $this->ci->load->view('email/useractivate', $this->data, TRUE);
-        //$html = $this->template->load('babybuy/email', 'email/forgotpassword', $this->data, true);
+        //$html = $this->template->load('gnel/email', 'email/forgotpassword', $this->data, true);
         echo $html;
         exit;
     }

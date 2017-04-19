@@ -2,7 +2,7 @@
 
 class Category extends MY_Controller {
 
-    protected $tamplate = 'babybuy/product';
+    protected $tamplate = 'gnel/product';
     public $cat_display = 'list';
     public $cat_brand = 0;
     public $cat_perpage = 15;

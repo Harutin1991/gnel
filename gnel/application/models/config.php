@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://new.babybuy.am/';
+$config['base_url']	= 'http://new.gnel.am/';
 
 /*
 |--------------------------------------------------------------------------

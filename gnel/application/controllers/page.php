@@ -2,7 +2,7 @@
 
 class Page extends MY_Controller {
 
-    protected $tamplate = 'babybuy/product';
+    protected $tamplate = 'gnel/product';
     public $menu_name = 'Menu1';
     
     function __construct(){

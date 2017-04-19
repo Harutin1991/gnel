@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Brands extends MY_Controller {
 
-    protected $tamplate = 'babybuy/product';
+    protected $tamplate = 'gnel/product';
     public $cat_display = 'list';
     public $cat_perpage = 15;
     public $br_category = 0;

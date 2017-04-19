@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Site extends MY_Controller {
 
-//    protected $tamplate = 'babybuy/product';
+//    protected $tamplate = 'gnel/product';
 
     public function index() {
         $this->load->view('site/index');
