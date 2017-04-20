@@ -326,13 +326,15 @@ function drawMenu($top_menu_pages, $attributes = array()) {
         }
     }
     $html = '<ul ' . $attr . '>';
-    $i = 0;
+    $i = 1;
     $count = count($top_menu_pages);
     if ($count > 0) {
         foreach ($top_menu_pages AS $page) {
             $i++;
+            if($i%4 == 0 ) {
 
-            $html .= '<li' . ($i%4 == 0 ? ' class="last-item"' : '') . '>';
+            }
+            $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
 
             //var_dump(strpos($page['url'], 'http://'));echo "<br/>";
             if (strpos($page['url'], '/') === 0) {

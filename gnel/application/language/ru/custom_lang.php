@@ -1,5 +1,4 @@
 <?php
-
 $lang['Language']										= "Язык";
 $lang['language']										= "язык";
 $lang['Languages']										= "Языки";

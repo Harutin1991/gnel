@@ -22,6 +22,9 @@
             </div>
         </div>
         <div class="col-md-2 col-sm-6 col-xs-6 flags text-right padding-lr0">
+<!--            <a --><?php //echo $lang == "am" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('am'); ?><!--"  title="Հայերեն"><img src="/themes/gnel/images/site-images/arm.png" /></a>-->
+<!--            <a --><?php //echo $lang == "ru" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('ru'); ?><!--"  title="Русский"><img src="/themes/gnel/images/site-images/russia.png" /></a>-->
+<!--            <a --><?php //echo $lang == "en" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('en'); ?><!--"  title="English"><img src="/themes/gnel/images/site-images/britain.png" /></a>-->
             <a href="#"><img src="/themes/gnel/images/site-images/arm.png" /></a>
             <a href="#"><img src="/themes/gnel/images/site-images/russia.png" /></a>
             <a href="#"><img src="/themes/gnel/images/site-images/britain.png" /></a>

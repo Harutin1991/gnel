@@ -21,8 +21,8 @@ class Home extends MY_Controller {
 		$this->load->model('UserModel');
 
 
-        $this->data['languages'] = $this->LanguagesModel->getAllLanguages('languages');
-        $this->data['default_language'] = $this->SettingsModel->get('default_language');
+//        $this->data['languages'] = $this->LanguagesModel->getAllLanguages('languages');
+//        $this->data['default_language'] = $this->SettingsModel->get('default_language');
 
 
     }

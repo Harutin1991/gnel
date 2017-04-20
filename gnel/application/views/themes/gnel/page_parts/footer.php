@@ -56,6 +56,7 @@
 <!--                <ul class="col-sm-3 col-xs-6">-->
 <!--                    <li><a href="--><?php //echo base_url('blog')?><!--">Our blog</a></li>-->
 <!--                </ul>-->
+
             </div>
         </div>
     </div>

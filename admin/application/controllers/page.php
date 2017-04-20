@@ -109,7 +109,7 @@ class Page extends Main_controller {
 
     public function subPages($id) {
         $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
-        $this->load->view('page/indexSubPage', $this->data);
+        $this->load->view('page/subpage', $this->data);
     }
 
     public function addSubPage($id) {

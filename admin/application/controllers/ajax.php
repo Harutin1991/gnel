@@ -34,7 +34,7 @@ class Ajax extends Main_controller {
 
     public function index() {
         $action = $this->input->post('action');
-        ob_clean();
+//        ob_clean();
         switch ($action) {
             case 'product_filter':
                 $this->load->model('ProductsModel');
@@ -287,9 +287,9 @@ class Ajax extends Main_controller {
 
                     foreach ($menu_items as $menu_item) {
                         if (isset($menu_item->parent_id)) {
-                            $data = array('parent_id' => $menu_item->parent_id, 'order' => $menu_item->left);
+                            $data = array('parent_id' => $menu_item->parent_id, 'ordering' => $menu_item->left);
                         } else {
-                            $data = array('parent_id' => $menu_id, 'order' => $menu_item->left);
+                            $data = array('parent_id' => $menu_id, 'ordering' => $menu_item->left);
                         }
 
                         if ($this->MenuItemModel->update('menu_items', $menu_item->item_id, $data))

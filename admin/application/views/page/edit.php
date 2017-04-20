@@ -94,6 +94,7 @@
 <!--                                    </div>-->
 <!--                                </td>-->
 <!--                            </tr>-->
+
                             <tr>
                                 <td>
                                     <label class="control-label" for="Page[status]" ><?php echo $this->lang->line('Status'); ?></label>

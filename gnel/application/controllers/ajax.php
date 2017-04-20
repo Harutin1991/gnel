@@ -34,7 +34,7 @@ class Ajax extends MY_controller {
     public $data = array();
 
     public function index() {
-        ob_clean();
+//        ob_clean();
         $action = $this->input->post('action');
         switch ($action) {
             case 'brand_filter':

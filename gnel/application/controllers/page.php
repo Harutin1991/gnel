@@ -27,6 +27,7 @@ class Page extends MY_Controller {
 	
 	public function item($url = 'Information') {
 
+        $this->data['url'] = $url;
         $this->data['page'] = $this->PageModel->getPageData($url);
 
         if(empty($this->data['page'])) {
