@@ -78,6 +78,7 @@
 
 
     jQuery(document).ready(function($) {
+
         $('span[status="change"]').click(function() {
             var action = $(this).attr('action');
             var table = 'blognews';
@@ -120,7 +121,6 @@
 
     $('.delete').click(function() {
         var id = $(this).attr('alt');
-        console.log(base_url);
 
         $.msgBox({
             title: '<?php echo $this->lang->line('Delete'); ?>',

@@ -47,6 +47,8 @@ class MY_Controller extends CI_Controller {
         $this->data['categories'] = $this->getAllCategories();
         $this->data['parent_categories_array'] = getParentArray($this->data['categories'], 'id');
         $this->data["menu"] = $this->MenuModel->getAllMenus();
+        $this->data["lang"] = $this->config->item('language');
+
 
         $this->data["shopping_cart"] = $this->ShoppingModel->getShoppingCart($data_shopping);
     }

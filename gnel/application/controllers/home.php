@@ -3,6 +3,7 @@
 /**
  * @property LanguagesModel $LanguagesModel
  * @property SettingsModel $SettingsModel
+ * @property UserModel $UserModel
  *
  */
 
@@ -29,11 +30,9 @@ class Home extends MY_Controller {
 	public function index() {
 
 
-
 //if(isset($_GET['html'])) {
 //    addHTMLFileToAllFolders();
 //}
-
 
 
         $lang = $this->config->item('language');

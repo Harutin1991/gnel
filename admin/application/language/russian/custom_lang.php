@@ -12,7 +12,7 @@ $lang['Add']											= "Добавлять";
 $lang['Edit']											= "Редактировать";
 $lang['Yes']											= "Да";
 $lang['No']												= "Нет";
-$lang['Delete']											= "Удалять";
+$lang['Delete']											= "Удалить";
 $lang['Are you sure you want to delete language?'] 		= "Вы уверены, что хотите удалить язык?";
 $lang['Language has added successfully'] 				= "Язык успешно добавлен";
 $lang['Language has edited successfully'] 				= "Язык успешно редактирован";
@@ -176,4 +176,9 @@ $lang['Special']				 						    = "Специально";
 $lang['Ordering']				 						    = "Порядок";
 $lang['Create sub page']				 				    = "Создать подстраницу";
 $lang['Show sub pages']				 				        = "Показать подстраницы";
+$lang['Home']									            = "Главная";
+$lang['Open website']									    = "Открыть веб-сайт";
+$lang['Personal']									        = "Персональный";
+$lang['Sign out']									        = "Выход";
+
 

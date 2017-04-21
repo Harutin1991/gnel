@@ -7,7 +7,6 @@
 <?php endif; ?>
 
 
-<?php // echo "<pre>"; var_dump($blognews); echo "</pre>"; ?>
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">
@@ -59,21 +58,11 @@
                                                 <label class="control-label" for="Blognews[content_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Content'); ?></label>
                                                 <?php editor("Blognews[content_" . $language->code . "]", 'band_content_' . $language->code, set_value('Blognews[content_' . $language->code . ']', $blognews['content_'.$language->code])); ?>
                                                 <div class="error"><?php echo form_error('Blognews[content_' . $language->code . ']'); ?></div>
-                                                
-                                                <br />
-                                                <label class="control-label" for="Blognews[meta_keywords_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta keywords'); ?></label>
-                                                <input name="Blognews[meta_keywords_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[meta_keywords_' . $language->code . ']', $blognews['meta_keywords_'.$language->code]); ?>" type="text" class="form-control" id="meta_keywords">
-                                                <div class="error"><?php echo form_error('Blognews[meta_keywords_' . $language->code . ']'); ?></div>
 
                                                 <br />
                                                 <label class="control-label" for="Blognews[meta_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta description'); ?></label>
                                                 <input name="Blognews[meta_description_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[meta_description_' . $language->code . ']', $blognews['meta_description_'.$language->code]); ?>" type="text" class="form-control" id="meta_description">
                                                 <div class="error"><?php echo form_error('Blognews[meta_description_' . $language->code . ']'); ?></div>
-
-                                                <br />
-                                                <label class="control-label" for="Blognews[ordering]"><?php echo $this->lang->line('Ordering'); ?></label>
-                                                <input name="Blognews[ordering]" value="<?php echo set_value('Blognews[ordering]', $blognews['ordering']); ?>" type="text" class="form-control" id="ordering">
-                                                <div class="error"><?php echo form_error('Blognews[ordering]'); ?></div>
 
                                                 <br />
                                                 <label class="control-label" for="Blognews[audio_link]"><?php echo $this->lang->line('Audio Link'); ?></label>
@@ -111,19 +100,6 @@
                                     <div class="error"><?php echo form_error('image'); ?></div>
                                 </td>
                             </tr>
-							<tr>
-								<td>
-									<label class="control-label" for=""><?php echo $this->lang->line('Blognewscategories'); ?></label>
-									<select name="blognews_category" class="form-control">
-										<?php if(!empty($blogcategories)) { ?>
-											<?php foreach($blogcategories as $key=>$category) { ?>
-												<option value="<?php echo $key; ?>" <?php echo $key == $blognews['blognews_category_id'] ? 'selected' : ''; ?>><?php echo isset($category[$language->code]) && $category[$language->code] != '' ? $category[$language->code] : $category[$default_language];?></option>
-											<?php } ?>
-
-										<?php } ?>
-									</select>
-								</td>
-							</tr>
                             <tr>
                                 <td>
                                     <input class="btn btn-primary" type="submit" value="<?php echo $this->lang->line('Edit'); ?>" />

@@ -6,6 +6,7 @@ if (!defined('BASEPATH'))
 /**
  * @property BlognewsModel $BlognewsModel
  * @property MenuItemModel $MenuItemModel
+ * @property BlogcategoriesModel $BlogcategoriesModel
  *
  */
 
@@ -609,7 +610,7 @@ class Ajax extends Main_controller {
 											);
 						}
 					}
-					$this->BlognewsModel->SaveBlogCategories($data);
+					$this->BlognewsModel->SaveBlog($data);
 					echo json_encode(array('html' => 'true'));
 
 

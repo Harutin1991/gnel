@@ -22,12 +22,9 @@
             </div>
         </div>
         <div class="col-md-2 col-sm-6 col-xs-6 flags text-right padding-lr0">
-<!--            <a --><?php //echo $lang == "am" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('am'); ?><!--"  title="Հայերեն"><img src="/themes/gnel/images/site-images/arm.png" /></a>-->
-<!--            <a --><?php //echo $lang == "ru" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('ru'); ?><!--"  title="Русский"><img src="/themes/gnel/images/site-images/russia.png" /></a>-->
-<!--            <a --><?php //echo $lang == "en" ? 'class="selected"' : ''; ?><!-- href="--><?php //echo createMultilangUrl('en'); ?><!--"  title="English"><img src="/themes/gnel/images/site-images/britain.png" /></a>-->
-            <a href="#"><img src="/themes/gnel/images/site-images/arm.png" /></a>
-            <a href="#"><img src="/themes/gnel/images/site-images/russia.png" /></a>
-            <a href="#"><img src="/themes/gnel/images/site-images/britain.png" /></a>
+            <a <?php echo $lang == "am" ? 'class="selected"' : ''; ?> href="<?php echo createMultilangUrl('am'); ?>"  title="Հայերեն"><img src="/themes/gnel/images/site-images/arm.png" /></a>
+            <a <?php echo $lang == "ru" ? 'class="selected"' : ''; ?> href="<?php echo createMultilangUrl('ru'); ?>"  title="Русский"><img src="/themes/gnel/images/site-images/russia.png" /></a>
+            <a <?php echo $lang == "en" ? 'class="selected"' : ''; ?> href="<?php echo createMultilangUrl('en'); ?>"  title="English"><img src="/themes/gnel/images/site-images/britain.png" /></a>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 padding-lr0">
@@ -41,7 +38,6 @@
                     </div>
                     <div id="playerContainer">
                         <div id="controlContainer" class="col-xs-12 text-center">
-
                             <ul class="controls">
                                 <li>
                                     <a href="#" class="left" data-attr="prevAudio"></a>
@@ -57,9 +53,7 @@
                                 <div data-attr="seekableTrack" class="seekableTrack"></div>
                                 <div class="updateProgress"></div>
                             </div>
-
                         </div>
-
                         <div class="volumeControl col-xs-12 text-center">
                             <div class="volume volume1 col-xs-1"></div>
                             <input class="bar" data-attr="rangeVolume" type="range" min="0" max="1" step="0.1" value="1" />

@@ -40,12 +40,12 @@ if (isset($_COOKIE['country_iso']) && $_COOKIE['country_iso'] !== '') {
     // Close request to clear up some resources
     curl_close($curl);
     $restp_arr = json_decode($resp);
-    setcookie("country_iso", $restp_arr->country->iso, time() + 3600 * 24 * 7);
-    if ($restp_arr->country->iso === 'AZ') {
-
-        header("Location: http://bibleandquran.com"); /* Redirect browser */
-        exit();
-    }
+//    setcookie("country_iso", $restp_arr->country->iso, time() + 3600 * 24 * 7);
+//    if ($restp_arr->country->iso === 'AZ') {
+//
+//        header("Location: http://bibleandquran.com"); /* Redirect browser */
+//        exit();
+//    }
 }
 
 

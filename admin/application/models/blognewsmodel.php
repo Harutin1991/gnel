@@ -15,11 +15,6 @@ class BlognewsModel extends MultilangModel {
         
         foreach($languages as $language){
             $rules[] = array(
-                'field'   => 'Blognews[meta_keywords_'.$language->code.']', 
-                'label'   => $this->ci->lang->line("Meta keywords"), 
-                'rules'   => 'max_length[255]', 
-            ); 
-            $rules[] = array(
                 'field'   => 'Blognews[meta_description_'.$language->code.']', 
                 'label'   => $this->ci->lang->line("Meta description"), 
                 'rules'   => 'max_length[255]', 
@@ -62,6 +57,7 @@ class BlognewsModel extends MultilangModel {
 	
 	public function getAllBlognews($order_by = 'DESC', $pr_string = '', $pr_perpage = '', $page_num = '') {
 		$table = 'blognews';
+        $order_column = 'ordering';
         $pk = $this->getPkName($table);
 		
 		$str_select = $table . '.*';
@@ -74,8 +70,9 @@ class BlognewsModel extends MultilangModel {
 		 $default_language = $this->getDefultLanguage();
         $this->db->select('SQL_CALC_FOUND_ROWS ' . $str_select, FALSE)
                 ->from($table)
-                ->join($this->table_t, $this->table_t . '.' . $this->foreign_key . '=' . $table . '.' . $pk, 'left');
-        
+                ->join($this->table_t, $this->table_t . '.' . $this->foreign_key . '=' . $table . '.' . $pk, 'left')
+                ->order_by($order_column, $order_by);
+
 		if ($pr_string == '') {
             $this->db->where($this->table_t . '.' . $this->lang_key, $default_language);
         }
@@ -241,6 +238,11 @@ class BlognewsModel extends MultilangModel {
     }
 
     public function SaveBlogCategories($data = array()) {
+        $this->db->update_batch('blognews', $data, 'id');
+
+    }
+
+    public function SaveBlog($data = array()) {
         $this->db->update_batch('blognews', $data, 'id');
 
     }

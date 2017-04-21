@@ -13,8 +13,8 @@
         <link href="<?php echo site_url('layout_data/css/bootstrap-responsive.css'); ?>" rel="stylesheet">
         <link href="<?php echo site_url('layout_data/css/charisma-app.css'); ?>" rel="stylesheet">
         <link href='<?php echo site_url('layout_data/bower_components/fullcalendar/dist/fullcalendar.css'); ?> rel='stylesheet'>
-              <link href='<?php echo site_url('layout_data/bower_components/fullcalendar/dist/fullcalendar.print.css') ?> rel='stylesheet' media='print'>
-              <link href="<?php echo site_url('layout_data/bower_components/chosen/chosen.min.css'); ?>" rel="stylesheet">
+        <link href='<?php echo site_url('layout_data/bower_components/fullcalendar/dist/fullcalendar.print.css') ?> rel='stylesheet' media='print'>
+        <link href="<?php echo site_url('layout_data/bower_components/chosen/chosen.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo site_url('layout_data/bower_components/colorbox/example3/colorbox.css'); ?>" rel="stylesheet">
         <link href="<?php echo site_url('layout_data/bower_components/responsive-tables/responsive-tables.css'); ?>" rel="stylesheet">
         <link href="<?php echo site_url('layout_data/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css'); ?>" rel="stylesheet">
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Gnel
+                <a class="navbar-brand" href="">Super admin
 <!--                    <img alt="Logo" src="--><?php //echo site_url('layout_data/img/babybuy_logo.png'); ?><!--" class="hidden-xs"/>-->
                     <span style="font-size: 15px;"></span></a>
 
@@ -73,9 +73,9 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo site_url('users/personal'); ?>">Անձնական</a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo site_url('logout'); ?>">Դուրս գալ</a></li>
+<!--                        <li><a href="--><?php //echo site_url('users/personal'); ?><!--">--><?php //echo $this->lang->line('Personal'); ?><!--</a></li>-->
+<!--                        <li class="divider"></li>-->
+                        <li><a href="<?php echo site_url('logout'); ?>"><?php echo $this->lang->line('Sign out'); ?></a></li>
                     </ul>
                 </div>
 
@@ -99,8 +99,8 @@
 <!--                    </ul>-->
 <!--                </div>-->
 
-                <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                    <li><a target="_blank" href="http://gnel.loc"><i class="glyphicon glyphicon-globe"></i>Բացել կայքը</a></li>
+                <ul class="collapse navbar-collapse nav navbar-nav top-menu pull-right">
+                    <li><a target="_blank" href="http://gnel.loc"><i class="glyphicon glyphicon-globe"></i>&nbsp<?php echo $this->lang->line('Open website'); ?></a></li>
 <!--                    <li class="dropdown">-->
 <!--                        <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i>Կարգավորումներ <span-->
 <!--                                class="caret"></span></a>-->
@@ -135,17 +135,17 @@
                             enabled to use this site.</p>
                     </div>
                 </noscript>
-                <div id="content" class="col-lg-10 col-sm-10">
+                <div id="content" class="col-lg-10 col-sm-10 content_pages">
                     <!-- content starts -->
-                    <div>
-                        <ul class="breadcrumb">
-                            <li style="text-transform: capitalize;">
-								<?php $ci =& get_instance(); $controller = $ci->router->fetch_class();?>
-                                <a href="<?php echo site_url($controller); ?>"><?php echo $this->lang->line(ucfirst($controller)); ?></a>
-                            </li>
-                            
-                        </ul>
-                    </div>
+<!--                    <div>-->
+<!--                        <ul class="breadcrumb">-->
+<!--                            <li style="text-transform: capitalize;">-->
+<!--								--><?php //$ci =& get_instance(); $controller = $ci->router->fetch_class();?>
+<!--                                <a href="--><?php //echo site_url($controller); ?><!--">--><?php //echo $this->lang->line(ucfirst($controller)); ?><!--</a>-->
+<!--                            </li>-->
+<!--                            -->
+<!--                        </ul>-->
+<!--                    </div>-->
                     <div id="content" class="span10">
                         {content}
                     </div>
@@ -179,9 +179,8 @@
             </div>
 
             <footer class="row">
-                <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="" target="_blank">Astudio</a>  <?php echo date("Y"); ?></p>
 
-                <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                <p class="col-md-3 col-sm-3 col-xs-12 powered-by pull-right">Powered by: <a
                         href="http://www.astudio.am">Astudio</a></p>
             </footer>
 

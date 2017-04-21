@@ -187,5 +187,8 @@ $lang['All products']				 						= "Բոլոր ապրանքները";
 $lang['Ordering']				 						    = "Դասավորվածություն";
 $lang['Create sub page']				 				    = "Ավելացնել ենթաէջ";
 $lang['Show sub pages']				 				        = "Ցույց տալ ենթաէջերը";
-
+$lang['Home']									            = "Գլխավոր";
+$lang['Open website']									    = "Բացել կայքը";
+$lang['Personal']									        = "Անձնական";
+$lang['Sign out']									        = "Դուրս գալ";
 

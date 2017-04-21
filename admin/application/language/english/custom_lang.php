@@ -177,5 +177,10 @@ $lang['Special']				 						    = "Special";
 $lang['Ordering']				 						    = "Ordering";
 $lang['Create sub page']				 				    = "Create sub page";
 $lang['Show sub pages']				 				        = "Show sub page";
+$lang['Home']									            = "Home";
+$lang['Open website']									    = "Open website";
+$lang['Personal']									        = "Personal";
+$lang['Sign out']									        = "Sign out";
+
 
 

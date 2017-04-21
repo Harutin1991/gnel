@@ -20,7 +20,7 @@
                     <td>
                         <?php echo $item->title; ?>
                     </td>
-                    <td>
+                    <td class="page_table_2td">
                         <a class="btn btn-success" href="<?php echo base_url("page/addSubPage/" . $item->id); ?>" >
                             <i class="glyphicon glyphicon-plus icon-white"></i>
                             <?php echo $this->lang->line('Create sub page'); ?>

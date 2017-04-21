@@ -6,9 +6,9 @@
 
             </div>
             <ul class="nav nav-pills nav-stacked main-menu">
-                <li class="nav-header">Main</li>
+<!--                <li class="nav-header">Main</li>-->
                 <li>
-                    <a class="ajax-link" href="<?php echo site_url('dashboard'); ?>"><i class="glyphicon glyphicon-home"></i><span> Գլխավոր</span></a>
+                    <a class="ajax-link" href="<?php echo site_url('dashboard'); ?>"><i class="glyphicon glyphicon-home"></i><span><?php echo $this->lang->line('Home'); ?></span></a>
                 </li>
 <!--                --><?php //if ($this->session->userdata('admin_id') == 1 || in_array('languages/', $this->permission)) { ?><!--      -->
 <!--                    <li class="accordion">-->
@@ -83,17 +83,17 @@
                 </li>
                 <?php } ?>
 
-				<?php if ($this->session->userdata('admin_id') == 1 || in_array('blognews/', $this->permission)) { ?>
-                <li class="accordion">
-                    <a href="#"><i class="	glyphicon glyphicon-chevron-down"></i><span> <?php echo $this->lang->line('Blognews categories'); ?></span></a>
-                    <ul class="nav nav-pills nav-stacked">
-                        <?php if ($this->session->userdata('admin_id') == 1 || in_array('blognews/add', $this->permission)) { ?>
-                        <li><a href="<?php echo base_url('blogcategories/add'); ?>"><?php echo $this->lang->line('Add blognews categories'); ?></a></li>
-                        <?php } ?>
-                        <li><a href="<?php echo base_url('blogcategories'); ?>"><?php echo $this->lang->line('Blognews categories'); ?></a></li>
-                    </ul>
-                </li>
-                <?php } ?>
+<!--				--><?php //if ($this->session->userdata('admin_id') == 1 || in_array('blognews/', $this->permission)) { ?>
+<!--                <li class="accordion">-->
+<!--                    <a href="#"><i class="	glyphicon glyphicon-chevron-down"></i><span> --><?php //echo $this->lang->line('Blognews categories'); ?><!--</span></a>-->
+<!--                    <ul class="nav nav-pills nav-stacked">-->
+<!--                        --><?php //if ($this->session->userdata('admin_id') == 1 || in_array('blognews/add', $this->permission)) { ?>
+<!--                        <li><a href="--><?php //echo base_url('blogcategories/add'); ?><!--">--><?php //echo $this->lang->line('Add blognews categories'); ?><!--</a></li>-->
+<!--                        --><?php //} ?>
+<!--                        <li><a href="--><?php //echo base_url('blogcategories'); ?><!--">--><?php //echo $this->lang->line('Blognews categories'); ?><!--</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                --><?php //} ?>
 
                 <?php if ($this->session->userdata('admin_id') == 1 || in_array('page/', $this->permission)) { ?>
                 <li class="accordion">

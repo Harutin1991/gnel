@@ -14,10 +14,12 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://admin.gnel.loc/';
-$config['frontend_url']	= 'http://gnel.loc/';
+//$config['base_url']	= 'http://admin.gnel.loc/';
+$config['base_url']	= 'http://gnel-admin.atalyanstudio.am/';
+$config['frontend_url']	= 'http://gnel-front.atalyanstudio.am/';
 
-$config["frontend_path"] = 'C:/xampp/htdocs/gnel/gnel/';
+//$config["frontend_path"] = 'C:/xampp/htdocs/gnel/gnel/';
+$config["frontend_path"] = '/home/atalyanstudio/gnel-front.atalyanstudio.am/gnel/';
 $config['images_path'] = $config["frontend_path"].'images/';
 
 $config['super_global_admin_id'] = 1;
@@ -75,7 +77,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'armenian';
+$config['language']	= 'russian';
 
 /*
 |--------------------------------------------------------------------------

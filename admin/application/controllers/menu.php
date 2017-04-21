@@ -1,5 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @property PageModel $PageModel
+ * @property MenuItemModel $MenuItemModel
+ *
+ */
+
 class Menu extends Main_controller {
 	
     public $layout = 'default';

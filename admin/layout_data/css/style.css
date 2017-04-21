@@ -295,3 +295,11 @@ table.order-products-info tr td{
 .main-menu a:hover {
     background-color: #267db0 !important;
 }
+
+.page_table_2td {
+    width: 70%;
+}
+
+.content_pages {
+    min-height: 700px;
+}

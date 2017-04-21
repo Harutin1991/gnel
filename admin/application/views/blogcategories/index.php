@@ -25,7 +25,7 @@
 										<?php foreach ($blogcategories as $item) { ?>
 											<li class="ui-state-default ui-sortable-handle  blog_categories" item_id="<?php echo $item->id; ?>"> 
 												<?php echo $item->title;  ?>
-												<a href="http://admin.babybuy.am/blogcategories/edit/<?php echo $item->id; ?>">
+												<a href="<?php echo base_url()?>blogcategories/edit/<?php echo $item->id; ?>">
 													<span url="<?php echo $item->id; ?>" item_title="<?php echo $item->title;  ?>" item_id="<?php echo $item->id; ?>" class="edit btn btn-mini btn-info edit_menu_item">
 														<i class="icon-edit icon-white"></i>
 														<?php  echo $this->lang->line('Edit'); ?>

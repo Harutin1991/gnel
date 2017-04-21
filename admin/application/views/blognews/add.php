@@ -59,11 +59,6 @@
                                                 <div class="error"><?php echo form_error('Blognews[content_' . $language->code . ']'); ?></div>
 
                                                 <br />
-                                                <label class="control-label" for="Blognews[meta_keywords_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta keywords'); ?></label>
-                                                <input name="Blognews[meta_keywords_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[meta_keywords_' . $language->code . ']'); ?>" type="text" class="form-control" id="meta_keywords">
-                                                <div class="error"><?php echo form_error('Blognews[meta_keywords_' . $language->code . ']'); ?></div>
-
-                                                <br />
                                                 <label class="control-label" for="Blognews[meta_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta description'); ?></label>
                                                 <input name="Blognews[meta_description_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[meta_description_' . $language->code . ']'); ?>" type="text" class="form-control" id="meta_description">
                                                 <div class="error"><?php echo form_error('Blognews[meta_description_' . $language->code . ']'); ?></div>
@@ -88,19 +83,6 @@
                                     <input name="image" value="<?php echo set_value('image'); ?>" class="form-control" type="file"  id="image">
                                     <div><img src="<?php echo base_url('img/upload-icon.png'); ?>" alt="" id="upload_image"/></div>
                                     <div class="error"><?php echo form_error('image'); ?></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="control-label" for=""><?php echo $this->lang->line('Blognewscategories'); ?></label>
-                                    <select name="blognews_category" class="form-control">
-                                        <?php if(!empty($blogcategories)) { ?>
-                                            <?php foreach($blogcategories as $key=>$category) { ?>
-                                                <option value="<?php echo $key; ?>" ><?php echo isset($category[$language->code]) && $category[$language->code] != '' ? $category[$language->code] : $category[$default_language];?></option>
-                                            <?php } ?>
-
-                                        <?php } ?>
-                                    </select>
                                 </td>
                             </tr>
 

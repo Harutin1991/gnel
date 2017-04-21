@@ -6,6 +6,14 @@ if (!defined('BASEPATH'))
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+ * @property CustomPostTypeModel $CustomPostTypeModel
+ * @property UsersModel $UsersModel
+ * @property LanguagesModel $LanguagesModel
+ * @property SettingsModel $SettingsModel
+ *
+ */
+
 class Main_controller extends CI_Controller {
 
     public $post_type;

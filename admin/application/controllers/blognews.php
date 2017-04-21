@@ -62,6 +62,7 @@ class Blognews extends Main_controller {
 
     public function add() {
         if ($this->input->post('Blognews')) {
+//            echo'<pre>'; print_r($this->input->post('Blognews')); die;
             $this->form_validation->set_rules($this->BlognewsModel->rules());
 
             if ($this->form_validation->run()) {
