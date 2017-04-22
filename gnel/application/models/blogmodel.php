@@ -34,10 +34,9 @@ class BlogModel extends MultilangModel {
 	public function getBlogNews($blognews_id){
 		$query = array();
 		$query = $this->db
-			->select('blognews.id AS id, blognews.date_created, blognews.image, blognews.blognews_category_id AS catgory_id')
+			->select('blognews.id AS id, blognews.date_created, blognews.image')
 			->select(" (CASE WHEN blognews_t.title ='' THEN blognews.title else blognews_t.title end) as title  ")
 			->select(" (CASE WHEN blognews_t.meta_description ='' THEN blognews.meta_description else blognews_t.meta_description end) as meta_description  ")
-			->select(" (CASE WHEN blognews_t.meta_keywords ='' THEN blognews.meta_keywords else blognews_t.meta_keywords end) as meta_keywords  ")
 			->select(" (CASE WHEN blognews_t.content ='' THEN blognews.content else blognews_t.content end) as content  ")
 			->from('blognews')
 			//->from('(SELECT date_created, COUNT(date_created) FROM blognews WHERE MONTH(date_created) < DATE_SUB(CURDATE(), INTERVAL 6 MONTH) GROUP BY MONTH(date_created)) AS ct')

@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="box-content">
-                <table>
+                <table class="table table-striped table-bordered bootstrap-datatable responsive">
                     <form method="POST" enctype="multipart/form-data">
                         <tbody>
                             <tr>
@@ -50,7 +50,7 @@
 
                                                 <br />
                                                 <label class="control-label" for="Blognews[short_content_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Short Content'); ?></label><br/>
-                                                <textarea name="Blognews[short_content_<?php echo $language->code; ?>]" id="short_content"><?php echo set_value('Blognews[short_content_' . $language->code . ']'); ?></textarea>
+                                                <input name="Blognews[short_content_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[short_content_' . $language->code . ']'); ?>" type="text" class="form-control" id="short_content">
                                                 <div class="error"><?php echo form_error('Blognews[short_content_' . $language->code . ']'); ?></div>
                                                 <br />
 

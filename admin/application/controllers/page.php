@@ -71,6 +71,8 @@ class Page extends Main_controller {
         $this->data['page'] = $this->PageModel->get('pages', $id);
         if($this->data['page'] == false) show_404();
 
+        $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
+
         if($this->input->post('Page')) {
             $this->form_validation->set_rules($this->PageModel->rules_edit());
             
@@ -107,6 +109,16 @@ class Page extends Main_controller {
         
 		$this->load->view('page/edit', $this->data);
 	}
+
+    public function contact() {
+//        $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
+//        $this->load->view('page/subpage', $this->data);
+    }
+
+    public function faq() {
+//        $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
+//        $this->load->view('page/subpage', $this->data);
+    }
 
     public function subPages($id) {
         $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);

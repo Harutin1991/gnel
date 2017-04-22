@@ -181,5 +181,8 @@ $lang['Open website']									    = "Открыть веб-сайт";
 $lang['Personal']									        = "Персональный";
 $lang['Sign out']									        = "Выход";
 $lang['admin_title']									    = "Админ";
+$lang['contact']									        = "Контакт";
+$lang['faq']									            = "Часто задаваемые вопросы";
+
 
 

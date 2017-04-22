@@ -51,7 +51,7 @@
 
                                                 <br />
                                                 <label class="control-label" for="Blognews[short_content_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Short Content'); ?></label><br/>
-                                                <textarea name="Blognews[short_content_<?php echo $language->code; ?>]" class="form-control" id="short_content"><?php echo set_value('Blognews[short_content_' . $language->code . ']', $blognews['short_content_'.$language->code]); ?></textarea>
+                                                <input name="Blognews[short_content_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[short_content_' . $language->code . ']', $blognews['short_content_'.$language->code]); ?>" type="text" class="form-control" id="short_content">
                                                 <div class="error"><?php echo form_error('Blognews[meta_keywords_' . $language->code . ']'); ?></div>
                                                 
                                                 <br />

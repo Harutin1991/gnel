@@ -54,6 +54,7 @@ class Blog extends MY_Controller {
         $page_count = $this->BlogModel->getCountNews();
         $this->data['popular'] = $this->BlogModel->getPopularNews();
         $this->data['page_count'] = ceil($page_count[0]->count_news / $this->blg_perpage);
+/*        echo '<pre>'; print_r($this->data["blognews"]); die;*/
         $this->load->view('blog/latest', $this->data);
     }
 
@@ -147,12 +148,13 @@ class Blog extends MY_Controller {
        if(isset($news[0]) && !empty($news[0])) {
            $this->data['news'] = $news[0];
            $id = $this->data['news']->id;
-           $this->data['old_id'] = $this->data['news']->catgory_id;
-           $filter = array('blognews.blognews_category_id' => $this->data['news']->catgory_id,
-                            'blognews.id !=' => $this->data['news']->id
-               );
-           $limit = 4;
-           $this->data['news_this_categoreis'] = $this->BlogModel->getLastBlognews($filter, 1, $limit);
+//           $this->data['old_id'] = $this->data['news']->catgory_id;
+//           $filter = array('blognews.blognews_category_id' => $this->data['news']->catgory_id,
+//                            'blognews.id !=' => $this->data['news']->id
+//               );
+//           $limit = 4;
+//           $this->data['news_this_categoreis'] = $this->BlogModel->getLastBlognews($filter = '', 1, $limit);
+
            /* $this->data['c_brand'] = $this->BrandModel->get('brands', $news_id);
             $this->data['meta_title']  = $this->data['c_brand']['name_'. $this->config->item('language')];
             $this->data['meta_keywords']    = $this->data['c_brand']['meta_keywords_'. $this->config->item('language')];

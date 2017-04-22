@@ -13,46 +13,21 @@
            -->
             <div class="clear"></div>
             <p><?php echo $news->content; ?></p>
-            <div class="links-share"> <span class="share-pre">Share:</span>
-                <a href="http://www.facebook.com/sharer.php?u=<?php  echo base_url().'blognews/'.$news->id; //blognews_url($news->id, 'blognews'); ?>" target="_blank" ><span class="icon"><i class="fa fa-facebook fa-fw"></i></span></a>
-                <a href="http://twitter.com/share?url=<?php  echo blognews_url($news->id, $news->title); ?>" target="_blank" ><span class="icon" ><i class="fa fa-twitter fa-fw"></i></span></a>
-                <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php echo blognews_url($news->id, $news->title); ?>" target="_blank"><span class="icon"><i class="fa fa-google-plus fa-fw"></i></span></a>
-             <!--   <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com"><span class="icon"><i class="fa fa-envelope fa-fw"></i></span></a> -->
-            </div>
+<!--            <div class="links-share"> <span class="share-pre">Share:</span>-->
+<!--                <a href="http://www.facebook.com/sharer.php?u=--><?php // echo base_url().'blognews/'.$news->id; //blognews_url($news->id, 'blognews'); ?><!--" target="_blank" ><span class="icon"><i class="fa fa-facebook fa-fw"></i></span></a>-->
+<!--                <a href="http://twitter.com/share?url=--><?php // echo blognews_url($news->id, $news->title); ?><!--" target="_blank" ><span class="icon" ><i class="fa fa-twitter fa-fw"></i></span></a>-->
+<!--                <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=--><?php //echo blognews_url($news->id, $news->title); ?><!--" target="_blank"><span class="icon"><i class="fa fa-google-plus fa-fw"></i></span></a>-->
+<!--            </div>-->
         </div>
         <div class="clear"></div>
-        <div class="post_item commentsblock">
-            <h2>Comments (<?php echo  $blognews_comments['total']; ?>)</h2>
-            <div id="review">
-             <?php $this->load->view('blog/comment-list', $this->data); ?>
-            </div>
-        </div>
-            <form action="#review"   method="post">
-                <h2 id="review-title"><?php echo $this->lang->line('Write a review'); ?>
+<!--        <div class="post_item commentsblock">-->
+<!--            <h2>Comments (--><?php //echo  $blognews_comments['total']; ?><!--)</h2>-->
+<!--            <div id="review">-->
+<!--             --><?php //$this->load->view('blog/comment-list', $this->data); ?>
+<!--            </div>-->
+<!--        </div>-->
 
-                </h2>
 
-                <b><?php echo $this->lang->line('Your Name:'); ?></b><br>
-                <input type="text" name="commentator_name" value="<?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>" disabled="disabled">
-                <br>
-                <br>
-                <b><?php echo $this->lang->line('Your Review:'); ?></b>
-                <textarea name="comment" cols="40" rows="8" style="width: 98%;"  maxlength="2000" <?php echo (isset($logged) && $logged) ? '' : 'disabled="disabled"'; ?>><?php echo (isset($logged) && $logged) ? '' : $this->lang->line("Please") . " " . $this->lang->line('login') . ' ' . $this->lang->line('to comment'); ?></textarea>
-                <!--<span style="font-size: 11px;"><span style="color: #FF0000;">Note:</span> HTML is not translated!</span><br>-->
-                <br>
-
-                <div class="buttons">
-                    <!--<div class="right"><a id="button-review" class="button">Submit</a></div>-->
-                    <div class="right">
-                        <?php if (isset($logged) && $logged) { ?>
-                            <input type="submit" value="<?php echo $this->lang->line('Comment'); ?>" name="submit_comment"  id="button-review"  class="button"  <?php echo (isset($logged) && $logged) ? '' : 'disabled="disabled"'; ?>/>
-                        <?php } else { ?>
-                            <div> <?php echo $this->lang->line('Please'); ?> <a href="<?php echo site_url('account/login'); ?>"><?php echo $this->lang->line('login'); ?> </a> <?php echo $this->lang->line('to comment'); ?></div>
-                        <?php } ?>
-                    </div>
-                    <div class="notify-empty "><?php echo isset($error) ? $error : ''; ?></div>
-                </div>
-            </form>
 
         <?php endif; ?>
     </div>

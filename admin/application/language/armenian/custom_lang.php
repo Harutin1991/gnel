@@ -192,4 +192,7 @@ $lang['Open website']									    = "Բացել կայքը";
 $lang['Personal']									        = "Անձնական";
 $lang['Sign out']									        = "Դուրս գալ";
 $lang['admin_title']									    = "Ադմին";
+$lang['contact']									        = "Կապ";
+$lang['faq']									            = "Հաճախ տրվող հարցեր";
+
 

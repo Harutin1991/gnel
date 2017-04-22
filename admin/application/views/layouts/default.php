@@ -68,15 +68,18 @@
 
                 <!-- user dropdown starts -->
                 <div class="btn-group pull-right">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"><?php echo $this->session->userdata('admin_username') ?></span>
-                        <span class="caret"></span>
+                    <button class="btn btn-default">
+                        <a href="<?php echo site_url('logout'); ?>"><?php echo $this->lang->line('Sign out'); ?></a>
                     </button>
-                    <ul class="dropdown-menu">
+<!--                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">-->
+<!--                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs">--><?php //echo $this->session->userdata('admin_username') ?><!--</span>-->
+<!--                        <span class="caret"></span>-->
+<!--                    </button>-->
+<!--                    <ul class="dropdown-menu">-->
 <!--                        <li><a href="--><?php //echo site_url('users/personal'); ?><!--">--><?php //echo $this->lang->line('Personal'); ?><!--</a></li>-->
 <!--                        <li class="divider"></li>-->
-                        <li><a href="<?php echo site_url('logout'); ?>"><?php echo $this->lang->line('Sign out'); ?></a></li>
-                    </ul>
+<!--                        <li><a href="--><?php //echo site_url('logout'); ?><!--">--><?php //echo $this->lang->line('Sign out'); ?><!--</a></li>-->
+<!--                    </ul>-->
                 </div>
 
 <!--                <div class="btn-group pull-right theme-container animated tada">-->
@@ -100,7 +103,7 @@
 <!--                </div>-->
 
                 <ul class="collapse navbar-collapse nav navbar-nav top-menu pull-right">
-                    <li><a target="_blank" href="http://gnel.loc"><i class="glyphicon glyphicon-globe"></i>&nbsp<?php echo $this->lang->line('Open website'); ?></a></li>
+                    <li><a target="_blank" href="<?php echo $this->config->item('frontend_url'); ?>"><i class="glyphicon glyphicon-globe"></i>&nbsp<?php echo $this->lang->line('Open website'); ?></a></li>
 <!--                    <li class="dropdown">-->
 <!--                        <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i>Կարգավորումներ <span-->
 <!--                                class="caret"></span></a>-->
@@ -229,40 +232,75 @@
         <script src="<?php echo site_url('layout_data/js/jquery.msgBox.js'); ?>"></script>
         <script src="<?php echo site_url('layout_data/js/jquery-ui.js'); ?>"></script>
         <script src="<?php echo site_url('layout_data/js/jquery.mjs.nestedSortable.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo site_url('editor/editor/tiny_mce.js') ?>"></script>
-        <script type="text/javascript">
-            tinyMCE.init({
-                mode: "textareas",
-                editor_selector: "mceEditor",
-                height: "350px",
-                theme: "advanced",
-                plugins: "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars",
-                theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,formatselect,fontsizeselect,|,undo,redo,|,fullscreen",
-                theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,anchor,image,cleanup,code,|,forecolor,backcolor",
-                theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,iespell,media,advhr,|,ltr,rtl",
-                theme_advanced_toolbar_location: "top",
-                theme_advanced_toolbar_align: "left",
-                theme_advanced_statusbar_location: "bottom",
-                theme_advanced_resizing: true,
-                relative_urls: false,
-                file_browser_callback: MadFileBrowser
-            });
+<!--        <script type="text/javascript" src="--><?php //echo site_url('editor/editor/tiny_mce.js') ?><!--"></script>-->
+        <script src="<?php echo site_url('tinymce/js/tinymce/tinymce.min.js') ?>"></script>
 
-            function MadFileBrowser(field_name, url, type, win) {
-                tinyMCE.activeEditor.windowManager.open({
-                    file: "<?php echo base_url(); ?>editor/mfm.php?field=" + field_name + "&url=" + url + "",
-                    title: 'File Manager',
-                    width: 850,
-                    height: 1000,
-                    resizable: "no",
-                    inline: "yes",
-                    close_previous: "no"
-                }, {
-                    window: win,
-                    input: field_name
+        <script type="text/javascript">
+
+            function tinyMceInit() {
+                tinymce.init({
+                    selector: 'textarea',
+                    language: 'ru',
+                    height: 150,
+                    theme: 'modern',
+                    // document_base_url : "/",
+                    plugins: [
+                        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen",
+                        "insertdatetime media nonbreaking save table contextmenu directionality",
+                        "emoticons template paste textcolor moxiemanager youtube"
+                    ],
+                    toolbar1: 'undo redo | styleselect | fontsizeselect | forecolor backcolor | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media insertfile removeformat',
+                    toolbar2: "pagebreak paste  hr spellchecker  visualblocks visualchars inserttime insertdate charmap searchreplace inserttable outdent indent emoticons print preview fullscreen | code | youtube",
+                    image_advtab: true,
+                    // relative_urls : true, ../../ -> sencer berum
+                    relative_urls : false
                 });
-                return false;
             }
+
+            tinyMceInit();
+
+//            var action = $('#formSend').attr('action');
+//            $('#mySelect').change(function(){
+//                var id = $(this).val();
+//                $('#formSend').attr('action',action+'/'+id);
+//            });
+
+
+//            tinyMCE.init({
+//                mode: "textareas",
+//                editor_selector: "mceEditor",
+//                height: "350px",
+//                theme: "modern",
+//                plugins: "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars",
+//                theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,formatselect,fontsizeselect,|,undo,redo,|,fullscreen",
+//                theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,anchor,image,cleanup,code,|,forecolor,backcolor",
+//                theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,iespell,media,advhr,|,ltr,rtl",
+//                theme_advanced_toolbar_location: "top",
+//                theme_advanced_toolbar_align: "left",
+//                theme_advanced_statusbar_location: "bottom",
+//                theme_advanced_resizing: true,
+//                relative_urls: false,
+//                file_browser_callback: MadFileBrowser
+//            });
+//
+//            function MadFileBrowser(field_name, url, type, win) {
+//                tinyMCE.activeEditor.windowManager.open({
+//                    file: "<?php //echo base_url(); ?>//editor/mfm.php?field=" + field_name + "&url=" + url + "",
+//                    title: 'File Manager',
+//                    width: 850,
+//                    height: 1000,
+//                    resizable: "no",
+//                    inline: "yes",
+//                    close_previous: "no"
+//                }, {
+//                    window: win,
+//                    input: field_name
+//                });
+//                return false;
+//            }
+
+
         </script>
         <script src="<?php echo base_url('/ckeditor/ckeditor.js'); ?>"></script>
         <script src="<?php echo base_url('/ckeditor/adapters/jquery.js'); ?>"></script>

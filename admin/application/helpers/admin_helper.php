@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 if (!function_exists('editor')) {
 
     function editor($name = 'default_name', $id = 'default_id', $text = null) {
-        include("editor/index.php");
+        include("tinymce/index.php");
     }
 
 }

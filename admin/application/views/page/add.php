@@ -49,7 +49,8 @@
 
                                                 <br />
                                                 <label class="control-label" for="Page[short_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Short description'); ?></label>
-                                                <textarea name="Page[short_description_<?php echo $language->code; ?>]" class="form-control" id="short_description"><?php echo set_value('Page[short_description_' . $language->code . ']'); ?></textarea>
+<!--                                                <textarea name="Page[short_description_--><?php //echo $language->code; ?><!--]" class="form-control" id="short_description">--><?php //echo set_value('Page[short_description_' . $language->code . ']'); ?><!--</textarea>-->
+                                                <input name="Page[short_description_<?php echo $language->code; ?>]" value="<?php echo set_value('Page[short_description_' . $language->code . ']'); ?>" type="text" class="form-control" id="short_description_">
                                                 <div class="error"><?php echo form_error('Page[short_description_' . $language->code . ']'); ?></div>
 
                                                 <br />

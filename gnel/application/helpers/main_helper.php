@@ -331,9 +331,6 @@ function drawMenu($top_menu_pages, $attributes = array()) {
     if ($count > 0) {
         foreach ($top_menu_pages AS $page) {
             $i++;
-            if($i%4 == 0 ) {
-
-            }
             $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
 
             //var_dump(strpos($page['url'], 'http://'));echo "<br/>";
