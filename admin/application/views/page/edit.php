@@ -22,13 +22,7 @@
                 <table>
                     <form method="POST" enctype="multipart/form-data">
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="control-label required" for="Page[url]" >URL</label>
-                                    <input name="Page[url]" value="<?php echo set_value('Page[url]', $page['url']); ?>" type="text" class="form-control" id="url">
-                                    <div class="error"><?php echo form_error('Page[url]'); ?></div>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <td>
                                     <ul class="nav nav-tabs" id="myTab">
@@ -47,11 +41,6 @@
                                                 <label class="control-label <?php echo $is_default ? 'required' : ''; ?>" for="Page[title_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Title'); ?></label>
                                                 <input name="Page[title_<?php echo $language->code; ?>]" value="<?php echo set_value('Page[title_' . $language->code . ']', $page['title_' . $language->code]); ?>" type="text" class="form-control" id="title" <?php echo $is_default ? 'required="required"' : ''; ?>>
                                                 <div class="error"><?php echo form_error('Page[title_' . $language->code . ']'); ?></div>
-
-                                                <br />
-                                                <label class="control-label" for="Page[meta_keywords_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta keywords'); ?></label>
-                                                <input name="Page[meta_keywords_<?php echo $language->code; ?>]" value="<?php echo set_value('Page[meta_keywords_' . $language->code . ']', $page['meta_keywords_' . $language->code]); ?>" type="text" class="form-control" id="meta_keywords">
-                                                <div class="error"><?php echo form_error('Page[meta_keywords_' . $language->code . ']'); ?></div>
 
                                                 <br />
                                                 <label class="control-label" for="Page[meta_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta description'); ?></label>
@@ -95,13 +84,6 @@
 <!--                                </td>-->
 <!--                            </tr>-->
 
-                            <tr>
-                                <td>
-                                    <label class="control-label" for="Page[status]" ><?php echo $this->lang->line('Status'); ?></label>
-                                    <?php echo form_dropdown('Page[status]', $statuses, set_value('Page[status]', $page['status']), 'id="page_status", class="form-control"'); ?>
-                                    <div class="error"><?php echo form_error('Page[status]'); ?></div>
-                                </td>
-                            </tr>
                             <tr>
                                 <td>
                                     <input class="btn btn-primary" type="submit" value="<?php echo $this->lang->line('Edit'); ?>" />

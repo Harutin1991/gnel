@@ -12,26 +12,6 @@
         <meta property="og:locale" content="en_US" />            <!-- Default -->
         <meta property="og:locale:alternate" content="hy_AM" />  <!-- French -->
         <meta property="og:locale:alternate" content="it_IT" />
-        <?php if(isset($fb_url)){ ?>
-			<meta property="og:url" content="<?php echo $fb_url; ?>"/>
-		<?php } else {?>
-            <meta property="og:url" content="<?php echo base_url(); ?>"/>
-        <?php } ?>
-		<?php if(isset($fb_image)){ ?>
-			<meta property="og:image" content="<?php echo $fb_image; ?>"/>
-        <?php } else {?>
-            <meta property="og:image" content="<?php echo base_url('themes/gnel/image/gnel_logo.png'); ?>"/>
-		<?php } ?>
-		<?php if(isset($fb_title)){ ?>
-			<meta property="og:title" content="<?php echo $fb_title; ?>"/>
-        <?php } else {?>
-            <meta property="og:title" content="<?php echo 'Մանկական օնլայն խանութ'; ?>"/>
-		<?php } ?>
-		<?php if(isset($fb_description)){ ?>
-			<meta property="og:description" content="<?php echo $fb_description; ?>" />
-		<?php } else {?>		
-			<meta property="og:description" content="Կայքում ներկայացված են լավագույն մանկական բրենդները: All kids brands in one awesome site." />
-		<?php } ?>			
 		<!-- END for Facebook -->
 		
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">

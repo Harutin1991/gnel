@@ -7,6 +7,7 @@ if (!defined('BASEPATH'))
  * @property BlognewsModel $BlognewsModel
  * @property MenuItemModel $MenuItemModel
  * @property BlogcategoriesModel $BlogcategoriesModel
+ * @property PageModel $PageModel
  *
  */
 
@@ -316,6 +317,8 @@ class Ajax extends Main_controller {
                         $this->_delete_img($old_image, 'pages');
 
                     if ($this->PageModel->delete('pages', $id))
+                        $this->db->where('parent_id', $id)
+                            ->delete('pages');
                         $this->addLog('Page with id: ' . $id . ' is deleted.');
 
                     echo json_encode(array('success' => true));

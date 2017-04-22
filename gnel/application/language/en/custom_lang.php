@@ -323,9 +323,9 @@ $lang['Confirm'] 											= "Confirm";
 $lang['New comment'] 										= "New comment";
 $lang['If like our site, please like it'] 					= "If like our site, please press like button"; 
 //meta
-$lang['default_meta_title']									= "Online kids shop";
-$lang['default_meta_description']							= "The site includes the children's best brands";
-$lang['default_meta_keywords']								= "Toys, baby care, baby carriage, mothers, children, online, store, chair, holder, bottle shop, delivery service, free of charge, Yerevan's stores online shop, bottles, baby supplies, personal care, go-carts, pallets, nipples, mothers, newborns, thermometer, shampoo, body oil, diaper delivery, cleaning products , Baby Art, Barbie, Bebi, BOOMco, Brevi, Bubchen, CAM, Chicco, Crayola, Fisher-Price, Friso, Huggies, Humana, Lansinoh, Libero, Mankan, Nuby, Nuk, Orange Elephant, Pampers, Philips Avent, Pingo, Similac, Stellar";
+$lang['default_meta_title']									= "Online shop";
+$lang['default_meta_description']							= "";
+$lang['default_meta_keywords']								= "";
 
 //Months
 $lang['January']											= "January";

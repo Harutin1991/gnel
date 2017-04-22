@@ -326,9 +326,9 @@ $lang['Confirm'] 											= "Հաստատել";
 $lang['New comment'] 										= "Նոր կարծիք";
 $lang['If like our site, please like it'] 					= "Եթե Ձեզ դուր եկավ մեր կայքը, խնդրում ենք սեղմեք Like կոճակը"; 
 //meta
-$lang['default_meta_title']									= "Մանկական օնլայն խանութ | mankakan online xanut";
-$lang['default_meta_description']							= "Կայքում ներկայացված են մանկական լավագույն ապրանքանիշերը";
-$lang['default_meta_keywords']								= "Խաղալիք, երեխա, խնամք, մանկասայլակ, մայրերի համար, մանկական, օնլայն, խանութ, manakakan online xanut, yerevan,   takdirner, mayreri hamar , erexaneri hamar, araqum, xaxalikner,  online xanut, mankasaylak,  խնամք, քայլակ, մանկասայլակ, չիկո, աթոռ, տակդիր, շիշ, խանութ, առաքում, անվճար, Մանկական խանութ երևանում, մանկական օնլայն խանութ, շշեր, մանկական պարագաներ, խնամքի պարագաներ, քայլակներ, տակդիրներ, ծծակներ, մայրերի համար, նորածին, ջերմաչափ, շամպուն, մարմնի յուղ, անձեռոցիկ,առաքում, մաքրող միջոցներ, Baby Art, Barbie, Bebi, BOOMco, Brevi, Bubchen, CAM, Chicco, Crayola, Fisher-Price, Friso, Huggies, Humana, Lansinoh, Libero, Mankan, Nuby, Nuk, Orange Elephant, Pampers, Philips Avent, Pingo, Similac, Stellar";
+$lang['default_meta_title']									= "Գնել օնլայն խանութ | gnel online xanut";
+$lang['default_meta_description']							= "";
+$lang['default_meta_keywords']								= "";
 
 //Months
 $lang['January']											= "Հունվար";

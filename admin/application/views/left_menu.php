@@ -23,17 +23,17 @@
 <!--                    </li>-->
 <!--                --><?php //} ?><!-- -->
 
-                <?php if ($this->session->userdata('admin_id') == 1 || in_array('menu/', $this->permission)) { ?>
-                    <li class="accordion">
-                        <a href="#"><i class="	glyphicon glyphicon-chevron-down"></i><span> <?php echo $this->lang->line('Menus'); ?></span></a>
-                        <ul class="nav nav-pills nav-stacked">
-                            <?php if ($this->session->userdata('admin_id') == 1 || in_array('menu/add', $this->permission)) { ?>
-                                <li><a href="<?php echo base_url('menu/add'); ?>"><?php echo $this->lang->line('Add menu'); ?></a></li>
-                            <?php } ?>
-                            <li><a href="<?php echo base_url('menu'); ?>"><?php echo $this->lang->line('Menus'); ?></a></li>
-                        </ul>
-                    </li>
-                <?php } ?>
+<!--                --><?php //if ($this->session->userdata('admin_id') == 1 || in_array('menu/', $this->permission)) { ?>
+<!--                    <li class="accordion">-->
+<!--                        <a href="#"><i class="	glyphicon glyphicon-chevron-down"></i><span> --><?php //echo $this->lang->line('Menus'); ?><!--</span></a>-->
+<!--                        <ul class="nav nav-pills nav-stacked">-->
+<!--                            --><?php //if ($this->session->userdata('admin_id') == 1 || in_array('menu/add', $this->permission)) { ?>
+<!--                                <li><a href="--><?php //echo base_url('menu/add'); ?><!--">--><?php //echo $this->lang->line('Add menu'); ?><!--</a></li>-->
+<!--                            --><?php //} ?>
+<!--                            <li><a href="--><?php //echo base_url('menu'); ?><!--">--><?php //echo $this->lang->line('Menus'); ?><!--</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                --><?php //} ?>
 
 <!--                --><?php //if ($this->session->userdata('admin_id') == 1 || in_array('custom/index', $this->permission)) { ?>
 <!--                    --><?php //foreach ($this->post_type as $table) { ?>

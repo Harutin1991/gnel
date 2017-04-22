@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Գնել ադմին</title>
+        <title>Админ</title>
         <meta name="robots" content="noindex,nofollow"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Super admin
+                <a class="navbar-brand" href="">Супер админ
 <!--                    <img alt="Logo" src="--><?php //echo site_url('layout_data/img/babybuy_logo.png'); ?><!--" class="hidden-xs"/>-->
                     <span style="font-size: 15px;"></span></a>
 
@@ -180,8 +180,8 @@
 
             <footer class="row">
 
-                <p class="col-md-3 col-sm-3 col-xs-12 powered-by pull-right">Powered by: <a
-                        href="http://www.astudio.am">Astudio</a></p>
+                <p class="col-md-3 col-sm-3 col-xs-12 powered-by pull-right"><a
+                        href="http://www.astudio.am">Design and development by:</a> ASTUDIO</p>
             </footer>
 
         </div><!--/.fluid-container-->

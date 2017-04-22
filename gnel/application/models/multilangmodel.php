@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+/**
+ * @property SettingsModel $SettingsModel
+ *
+ */
 class MultilangModel extends BaseModel {
     
     protected $attributes_t = array();

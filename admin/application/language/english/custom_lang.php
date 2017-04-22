@@ -181,6 +181,7 @@ $lang['Home']									            = "Home";
 $lang['Open website']									    = "Open website";
 $lang['Personal']									        = "Personal";
 $lang['Sign out']									        = "Sign out";
+$lang['admin_title']									    = "Admin";
 
 
 

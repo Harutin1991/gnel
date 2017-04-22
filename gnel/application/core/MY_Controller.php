@@ -6,7 +6,14 @@ if (!defined('BASEPATH'))
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /**
-* @property ShoppingModel $ShoppingModel
+ * @property ShoppingModel $ShoppingModel
+ * @property MultilangModel $MultilangModel
+ * @property CategoryModel $CategoryModel
+ * @property LanguagesModel $LanguagesModel
+ * @property SettingsModel $SettingsModel
+ * @property MenuModel $MenuModel
+ * @property PageModel $PageModel
+ *
  */
 class MY_Controller extends CI_Controller {
 
@@ -23,6 +30,7 @@ class MY_Controller extends CI_Controller {
         $this->load->model('CategoryModel');
         $this->load->model('MenuModel');
         $this->load->model('ShoppingModel');
+        $this->load->model('PageModel');
         $firstSegment = getFirstSegment();
         if ($firstSegment != NULL) {
             if (array_key_exists($firstSegment, $languages))
@@ -46,10 +54,9 @@ class MY_Controller extends CI_Controller {
         $this->data['last_products'] = $this->MultilangModel->getProducts();
         $this->data['categories'] = $this->getAllCategories();
         $this->data['parent_categories_array'] = getParentArray($this->data['categories'], 'id');
-        $this->data["menu"] = $this->MenuModel->getAllMenus();
+        $this->data["page"] = $this->PageModel->getAll('pages');
+//        var_dump($this->data["page"]); die;
         $this->data["lang"] = $this->config->item('language');
-
-
         $this->data["shopping_cart"] = $this->ShoppingModel->getShoppingCart($data_shopping);
     }
 

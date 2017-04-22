@@ -39,10 +39,10 @@ class Page extends Main_controller {
     public function add() {
         if($this->input->post('Page')) {
             $this->form_validation->set_rules($this->PageModel->rules_add());
-
             if($this->form_validation->run()) {
                 $data = $this->input->post('Page', true);
-                
+                $data['url'] = $data['title_' . $this->data['default_language']];
+
                 if(isset($data['status']))
                     $data['status'] = 1;
                 else
@@ -76,6 +76,7 @@ class Page extends Main_controller {
             
             if($this->form_validation->run()) {
                 $data = $this->input->post('Page', true);
+                $data['url'] = $data['title_' . $this->data['default_language']];
                 
                 if(isset($data['status']))
                     $data['status'] = 1;
@@ -122,6 +123,7 @@ class Page extends Main_controller {
 
             if($this->form_validation->run()) {
                 $data = $this->input->post('Page', true);
+                $data['url'] = $data['title_' . $this->data['default_language']];
 
                 if(isset($data['status']))
                     $data['status'] = 1;

@@ -61,9 +61,19 @@
         </div>
     </div>
     <div class="col-xs-12 design padding-lr0">
-        <p class="col-xs-12 col-sm-6 text-left padding-lr0">
-            <i>made in Armenia</i>
-        </p>
+
+        <div class="col-xs-12 col-sm-6 text-left">
+            <div class="col-xs-12 col-sm-6 text-center social_icon">
+                <a href="#"><img src="/themes/gnel/images/site-images/fb.png"></a>
+                <a href="#"><img src="/themes/gnel/images/site-images/vk.png"></a>
+                <a href="#"><img src="/themes/gnel/images/site-images/insta.png"></a>
+                <a href="#"><img src="/themes/gnel/images/site-images/ytd.png"></a>
+            </div>
+        </div>
+
+<!--        <p class="col-xs-12 col-sm-6 text-left padding-lr0">-->
+<!--            <i>made in Armenia</i>-->
+<!--        </p>-->
         <p class="col-xs-12 col-sm-6 text-right padding-lr0">
             <i>Design and development by <a href="#">ASTUDIO</a></i>
         </p>
@@ -71,11 +81,3 @@
 
 </div>
 <div class="support"><p>On-line SUPPORT</p></div>
-<div class="social">
-    <div class="social-c">
-        <a href="#"><img src="/themes/gnel/images/site-images/fb.png"></a>
-        <a href="#"><img src="/themes/gnel/images/site-images/vk.png"></a>
-        <a href="#"><img src="/themes/gnel/images/site-images/insta.png"></a>
-        <a href="#"><img src="/themes/gnel/images/site-images/ytd.png"></a>
-    </div>
-</div>

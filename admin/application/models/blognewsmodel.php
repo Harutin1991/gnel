@@ -4,7 +4,7 @@ class BlognewsModel extends MultilangModel {
     public function __construct() {
         parent::__construct();
 		
-		$this->setAttributesT('blognews_t', array('title', 'content', 'short_content', 'meta_keywords', 'meta_description'), 'lang_code', 'blognews_id');
+		$this->setAttributesT('blognews_t', array('title', 'content', 'short_content', 'meta_description'), 'lang_code', 'blognews_id');
     }
     
     public function rules() {

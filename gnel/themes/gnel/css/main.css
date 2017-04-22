@@ -964,4 +964,9 @@ a:hover.slidesjs-stop {
     background-color: transparent !important;
 }
 
+.social_icon {
+    background-color: #1084da;
+    padding: 5px;
+}
+
 

@@ -240,7 +240,7 @@ class MultilangModel extends BaseModel {
 
     public function delete($table, $id) {
         if (parent::delete($table, $id)) {
-            $query = $this->db->where($this->foreign_key, $id)
+            $this->db->where($this->foreign_key, $id)
                     ->delete($this->table_t);
 
             return true;

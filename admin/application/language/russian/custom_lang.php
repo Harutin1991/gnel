@@ -174,11 +174,12 @@ $lang['Add partner']		 						        = "Добавить партнера";
 $lang['Link']				 						        = "Ссылка";
 $lang['Special']				 						    = "Специально";
 $lang['Ordering']				 						    = "Порядок";
-$lang['Create sub page']				 				    = "Создать подстраницу";
-$lang['Show sub pages']				 				        = "Показать подстраницы";
+$lang['Create sub page']				 				    = "Добавить подраздел";
+$lang['Show sub pages']				 				        = "Показать подраздели";
 $lang['Home']									            = "Главная";
 $lang['Open website']									    = "Открыть веб-сайт";
 $lang['Personal']									        = "Персональный";
 $lang['Sign out']									        = "Выход";
+$lang['admin_title']									    = "Админ";
 
 
