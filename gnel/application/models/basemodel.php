@@ -2,6 +2,11 @@
 class BaseModel extends CI_Model {
     
     protected $ci;
+    protected $attributes_t = array();
+    protected $lang_key = '';
+    protected $foreign_key = '';
+    protected $table_t = '';
+    public $default_language;
     
     public function __construct() {
 //        $this->output->enable_profiler(TRUE);
@@ -65,16 +70,53 @@ class BaseModel extends CI_Model {
         return NULL;
     }
     
-    public function getAll($table, $order_by='DESC') {
+//    public function getAll($table, $order_by='DESC') {
+//        $pk = $this->getPkName($table);
+//        $query = $this->db->order_by($pk, $order_by)
+//                          ->get($table);
+//
+//        if($query->num_rows() > 0) {
+//            return $query->result();
+//        }
+//
+//        return array();
+//    }
+
+    protected function getDefultLanguage() {
+        $this->ci->load->model('SettingsModel');
+        return $this->ci->SettingsModel->get('default_language');
+    }
+
+    public function getAll($table, $order_by = 'ASC', $order_column = 'ordering') {
         $pk = $this->getPkName($table);
-        $query = $this->db->order_by($pk, $order_by)
-                          ->get($table);
-        
-        if($query->num_rows() > 0) {
+        $str_select = $table . '.*';
+
+        foreach ($this->attributes_t as $attr) {
+            $str_select .= ', ';
+            $str_select .= $this->table_t . '.' . $attr;
+        }
+        $default_language = $this->getDefultLanguage();
+        $this->db->select($str_select)
+            ->from($table)
+            ->join($this->table_t, $this->table_t . '.' . $this->foreign_key . '=' . $table . '.' . $pk . ' AND ' . $this->table_t . '.' . $this->lang_key . ' = ' . '"' . $default_language . '"', 'left')
+            ->order_by($order_column, $order_by);
+        //check if admin user have permitions
+        $attributes = $this->getAttributes($table);
+        $user  = array("user_id"=> $this->admin_id);
+        $if_contains_user = array_intersect_key($user, $attributes);
+        if ($this->admin_id != $this->config->item('super_global_admin_id')
+            && !empty($if_contains_user)
+            && $this->session->userdata('rol_id') !== '3' // if operator
+        ) {
+            $this->db->where($table.'.user_id', $this->admin_id);
+        }
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
             return $query->result();
         }
-        
-        return array();
+
+        return false;
     }
     
     public function delete($table, $id) {

@@ -15,7 +15,7 @@ class PageModel extends MultilangModel {
 
     public function getPageData($url) {
 		$query = $this->db
-                ->select('pages_t.*,  pages.url AS url, pages.image AS image')
+                ->select('pages_t.*,  pages.url AS url, pages.parent_id AS parent_id, pages.image AS image')
                 ->from('pages')
 				->join('pages_t', "pages.id = pages_t.page_id", 'left')
                 ->where('pages.url', $url)
@@ -26,6 +26,40 @@ class PageModel extends MultilangModel {
             $result = $query->row();
 		}
 		
+		return $result;
+	}
+
+	public function getPageChilds($parent_id) {
+		$query = $this->db
+                ->select('pages_t.*,  pages.url AS url, pages.parent_id AS parent_id, pages.image AS image')
+                ->from('pages')
+				->join('pages_t', "pages.id = pages_t.page_id", 'left')
+                ->where('pages.parent_id', $parent_id)
+				->where('pages_t.lang_code', $this->config->item('language'))
+                ->get();
+		$result = array();
+		if ($query->num_rows() > 0) {
+            $result = $query->result();
+
+		}
+
+		return $result;
+	}
+
+	public function getParrentPage($parent_id) {
+		$query = $this->db
+                ->select('pages_t.*,  pages.url AS url, pages.parent_id AS parent_id, pages.image AS image')
+                ->from('pages')
+				->join('pages_t', "pages.id = pages_t.page_id", 'left')
+                ->where('pages.id', $parent_id)
+				->where('pages_t.lang_code', $this->config->item('language'))
+                ->get();
+		$result = array();
+		if ($query->num_rows() > 0) {
+            $result = $query->result();
+
+		}
+
 		return $result;
 	}
 

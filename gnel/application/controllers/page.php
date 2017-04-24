@@ -29,15 +29,29 @@ class Page extends MY_Controller {
 
         $this->data['url'] = $url;
         $this->data['pages'] = $this->PageModel->getPageData($url);
-//        print_r($this->data['pages']); die;
 
-        if(empty($this->data['page'])) {
+
+
+        if(empty($this->data['pages'])) {
             redirect(site_url('page/Information'));
         }
-		$this->load->view('page/index', $this->data);
+
+        $parent_id = $this->data['pages']->parent_id;
+        if($parent_id != 0) {
+            $this->data['page_parrent'] = $this->PageModel->getParrentPage($parent_id);
+            $this->data['page_childes'] = $this->PageModel->getPageChilds($parent_id);
+
+            $this->load->view('page/item', $this->data);
+        } else {
+            $page_id = $this->data['pages']->page_id;
+            $this->data['page_childes'] = $this->PageModel->getPageChilds($page_id);
+            $this->load->view('page/index', $this->data);
+
+        }
+
 	}
 
-	public function about() {
+	public function faq() {
 		$this->load->view('site/about');
 	}
 

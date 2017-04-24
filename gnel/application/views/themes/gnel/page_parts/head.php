@@ -24,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/example.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/player.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/font-awesome.min.css">
 <!--        <link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--themes/gnel/css/custom.css">-->
 
@@ -39,6 +40,7 @@
 
 
         <script type="text/javascript" src="<?php echo base_url(); ?>themes/gnel/js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>themes/gnel/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>themes/gnel/js/lib/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>themes/gnel/js/lib/slick.min.js"  charset="utf-8"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>themes/gnel/js/lib/bootstrap.min.js"  charset="utf-8"></script>

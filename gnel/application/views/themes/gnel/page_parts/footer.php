@@ -54,9 +54,13 @@
 <!--                    <li><a href="#">Currency exchange</a></li>-->
 <!--                    <li><a href="--><?php //echo base_url('blog')?><!--">Our blog</a></li>-->
 <!--                </ul>-->
+
                 <ul class="col-sm-3 col-xs-6">
+                    <li><a href="<?php echo base_url('faq')?>">Faq</a></li>
                     <li><a href="<?php echo base_url('blog')?>">Our blog</a></li>
+                    <li><a href="<?php echo base_url('contact')?>">Contact</a></li>
                 </ul>
+
 
             </div>
         </div>
@@ -78,6 +82,8 @@
         <p class="col-xs-12 col-sm-6 text-right padding-lr0">
             <i>Design and development by <a href="#">ASTUDIO</a></i>
         </p>
+    </div>
+    </div>
     </div>
 
 </div>
