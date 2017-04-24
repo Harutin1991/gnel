@@ -25,6 +25,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/example.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/player.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/font-awesome.min.css">
+<!--        <link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--themes/gnel/css/custom.css">-->
 
 <!--        <link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--themes/gnel/css/stylesheet.css">-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>themes/gnel/css/main.css?<?php echo filectime('themes/gnel/css/main.css'); ?>">

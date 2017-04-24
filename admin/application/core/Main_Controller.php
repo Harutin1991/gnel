@@ -74,7 +74,7 @@ class Main_controller extends CI_Controller {
             }
         }
         $config['upload_path'] = $path . "{$folder}";
-        $config['allowed_types'] = 'gif|jpg|png'; // by extension, will check for whether it is an image
+        $config['allowed_types'] = 'gif|jpg|png|jpeg'; // by extension, will check for whether it is an image
         $config['encrypt_name'] = true;
         $this->load->library('upload');
         $this->upload->initialize($config);

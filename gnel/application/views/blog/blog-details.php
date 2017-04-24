@@ -1,31 +1,27 @@
 <div id="content">
-    <?php //echo '<pre>';var_dump($news_this_categoreis); ?>
     <div class="breadcrumb"> <a href="<?php echo base_url(); ?>">Home</a> » <a href="<?php echo base_url().'blog/'; ?>">Blog</a> » <span><?php echo $news->title; ?></span></div>
 <!--    <h1><span class="h1-top">Things for Cuties - the Blog</span></h1>-->
     <div class="information_content">
+
         <?php if(!empty($news)) : ?>
-        <div class="post_item simple_post_item" blognews-id="<?php echo $news->id; ?>">
-            <h2><?php echo $news->title; ?></h2>
-            <p class="post_info "> <?php echo date('d/m/Y', strtotime($news->date_created)); ?> </p>
-            <div class="imageborder"><img alt="news" src="<?php echo base_url().'images/blognews/'.$news->image; ?>" ></div>
-            <!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse.</p>
-           -->
-            <div class="clear"></div>
-            <p><?php echo $news->content; ?></p>
-<!--            <div class="links-share"> <span class="share-pre">Share:</span>-->
-<!--                <a href="http://www.facebook.com/sharer.php?u=--><?php // echo base_url().'blognews/'.$news->id; //blognews_url($news->id, 'blognews'); ?><!--" target="_blank" ><span class="icon"><i class="fa fa-facebook fa-fw"></i></span></a>-->
-<!--                <a href="http://twitter.com/share?url=--><?php // echo blognews_url($news->id, $news->title); ?><!--" target="_blank" ><span class="icon" ><i class="fa fa-twitter fa-fw"></i></span></a>-->
-<!--                <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=--><?php //echo blognews_url($news->id, $news->title); ?><!--" target="_blank"><span class="icon"><i class="fa fa-google-plus fa-fw"></i></span></a>-->
-<!--            </div>-->
-        </div>
-        <div class="clear"></div>
-<!--        <div class="post_item commentsblock">-->
-<!--            <h2>Comments (--><?php //echo  $blognews_comments['total']; ?><!--)</h2>-->
-<!--            <div id="review">-->
-<!--             --><?php //$this->load->view('blog/comment-list', $this->data); ?>
-<!--            </div>-->
-<!--        </div>-->
+
+            <div class="row row-image">
+                <div class="img-container">
+                    <div class="image" style="background-image: url(<?php echo base_url().'images/blognews/'.$news->image; ?>)"></div>
+                </div>
+                <div class="img-container-bg"></div>
+                <div class="text-container">
+                    <a href="<?php echo base_url().'blog/'; ?>" class="href"><span class="glyphicon glyphicon-arrow-left"></span>Обратно в блог</a>
+                    <h1><?php echo $news->title; ?></h1>
+<!--                    <p><a href="javascript:void(0)" class="date">16&nbsp;Апрель&nbsp;2017</a><span class="view"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>1</span></p>-->
+                </div>
+            </div>
+
+            <div class="row row-max">
+                <div class="text">
+                    <?php echo $news->content; ?>
+                </div>
+            </div>
 
 
 

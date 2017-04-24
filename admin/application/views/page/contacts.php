@@ -21,20 +21,20 @@
             <div class="box-content">
 
                 <div class="pull-right">
-                    <a class="btn btn-success" href="<?php echo base_url("Contact/addcontact/"); ?>" >
+                    <a class="btn btn-success" href="<?php echo base_url("page/addcontact/"); ?>" >
                         <i class="glyphicon glyphicon-plus icon-white"></i>
                         <?php echo $this->lang->line('add_topic'); ?>
                     </a>
                 </div>
                 <div class="clear"></div><br>
-                <?php if (!empty($Contacts)) { ?>
+                <?php if (!empty($contacts_topic)) { ?>
                 <table>
                     <tbody>
                     <div>
                         <div class="box-content" id="blog">
                             <div>
                                 <ul id="sortable" class="ui-sortable">
-                                    <?php foreach ($Contacts as $item) { ?>
+                                    <?php foreach ($contacts_topic as $item) { ?>
                                         <li class="ui-state-default ui-sortable-handle  blog" id="li<?php echo $item['id']; ?>" item_id="<?php echo $item['id']; ?>">
                                             <?php echo $item['title'];  ?>
 
@@ -44,7 +44,7 @@
                                                         <?php  echo $this->lang->line('Delete'); ?>
                                                     </span>
                                             </a>
-                                            <a href="<?php echo base_url(); ?>Contact/edit/<?php echo $item['id']; ?>">
+                                            <a href="<?php echo base_url(); ?>page/editcontact/<?php echo $item['id']; ?>">
                                                     <span url="<?php echo $item['id']; ?>" item_title="<?php echo $item['title'];  ?>" item_id="<?php echo $item['id']; ?>" class="edit btn btn-mini btn-info edit_menu_item">
                                                         <i class="glyphicon glyphicon-edit icon-white"></i>
                                                         <?php  echo $this->lang->line('Edit'); ?>
@@ -113,7 +113,7 @@
                         </tr>
                         <tr>
                             <td class="upload_image_wrapper">
-                                <?php $img_url = $contacts['image'] != '' ? $this->config->item('frontend_url') . 'images/Contacts/' . $contacts['image'] : base_url('img/upload-icon.png'); ?>
+                                <?php $img_url = $contacts['image'] != '' ? $this->config->item('frontend_url') . 'images/contact/' . $contacts['image'] : base_url('img/upload-icon.png'); ?>
                                 <label class="control-label" for="image" ><?php echo $this->lang->line('Chose image'); ?></label><br/>
                                 <input name="image" value="<?php echo set_value('image'); ?>" class="form-control" type="file"  id="image">
                                 <div><img src="<?php echo $img_url; ?>" alt="" id="current-image"/></div>
@@ -150,12 +150,11 @@
                     order:  key + 1
                 });
             });
-            console.log(items);
             $.ajax({
                 url: base_url + "ajax",
                 dataType: 'json',
                 type: 'post',
-                data: {'action': 'save_sub_Contact', 'items':items },
+                data: {'action': 'save_contact_topic', 'items':items },
                 success: function(data) {
                     $('.ajax_loader').hide();
                     $('#save').show();
@@ -169,7 +168,6 @@
 
     $('.delete').click(function() {
         var id = $(this).attr('alt');
-        console.log(id);
 
         $.msgBox({
             title: '<?php echo $this->lang->line('Delete'); ?>',
@@ -182,7 +180,7 @@
                         url: base_url + "ajax",
                         dataType: 'json',
                         type: 'post',
-                        data: {'action': 'delete_sub_Contact', 'id': id},
+                        data: {'action': 'delete_contact_topic', 'id': id},
                         success: function(data) {
                             if (data.success == true)
                                 $('#li' + id).fadeOut(2000, function() {

@@ -22,7 +22,8 @@
         <div class="col-sm-9 col-xs-12 footer-menu">
             <div class="fm">
 
-                <?php echo drawMenu($menu['Information'], array("class" => "menu_footer_item text_item")); ?>
+<!--                --><?php //echo print_r($page); die; ?>
+                <?php echo drawMenu($page, array("class" => "menu_footer_item text_item")); ?>
 
 <!--                <ul class="col-sm-3 col-xs-6">-->
 <!--                    <li><a href="#">About us</a></li>-->
@@ -62,7 +63,7 @@
     </div>
     <div class="col-xs-12 design padding-lr0">
 
-        <div class="col-xs-12 col-sm-6 text-left">
+        <div class="col-xs-12 col-sm-6 text-left" style="padding: 0">
             <div class="col-xs-12 col-sm-6 text-center social_icon">
                 <a href="#"><img src="/themes/gnel/images/site-images/fb.png"></a>
                 <a href="#"><img src="/themes/gnel/images/site-images/vk.png"></a>

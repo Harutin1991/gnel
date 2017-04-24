@@ -49,7 +49,7 @@
                                                 <div class="error"><?php echo form_error('Blognews[title_' . $language->code . ']'); ?></div>
 
                                                 <br />
-                                                <label class="control-label" for="Blognews[short_content_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Short Content'); ?></label><br/>
+                                                    <label class="control-label" for="Blognews[short_content_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Short Content'); ?></label><br/>
                                                 <input name="Blognews[short_content_<?php echo $language->code; ?>]" value="<?php echo set_value('Blognews[short_content_' . $language->code . ']'); ?>" type="text" class="form-control" id="short_content">
                                                 <div class="error"><?php echo form_error('Blognews[short_content_' . $language->code . ']'); ?></div>
                                                 <br />

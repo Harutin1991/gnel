@@ -54,8 +54,8 @@ class MY_Controller extends CI_Controller {
         $this->data['last_products'] = $this->MultilangModel->getProducts();
         $this->data['categories'] = $this->getAllCategories();
         $this->data['parent_categories_array'] = getParentArray($this->data['categories'], 'id');
-        $this->data["menu"] = $this->MenuModel->getAllMenus('menus');
-//        $this->data["page"] = $this->PageModel->getAll('pages');
+//        $this->data["menu"] = $this->MenuModel->getAllMenus('menus');
+        $this->data["page"] = $this->PageModel->getAll('pages');
 //        echo'<pre>';print_r($this->data["page"]); die;
 
         $this->data["lang"] = $this->config->item('language');

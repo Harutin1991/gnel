@@ -7,7 +7,7 @@ class ContactTopicModel extends MultilangModel
     {
         parent::__construct();
 
-        $this->setAttributesT('contact_topic_t', array('content','short_content'), 'lang_code', 'contact_topic_id');
+        $this->setAttributesT('contact_topic_t', array('content','short_content', 'title'), 'lang_code', 'contact_topic_id');
     }
 
 
@@ -22,14 +22,14 @@ class ContactTopicModel extends MultilangModel
 
             if ($language->code == $default_language) {
                 $rules[] = array(
-                    'field' => 'Faq[question_' . $language->code . ']',
-                    'label' => $this->ci->lang->line("question"),
+                    'field' => 'Contact_topic[title_' . $language->code . ']',
+                    'label' => $this->ci->lang->line("Title"),
                     'rules' => 'required|max_length[255]',
                 );
             } else {
                 $rules[] = array(
-                    'field' => 'Faq[question_' . $language->code . ']',
-                    'label' => $this->ci->lang->line("question"),
+                    'field' => 'Contact_topic[title_' . $language->code . ']',
+                    'label' => $this->ci->lang->line("Title"),
                     'rules' => 'max_length[255]',
                 );
             }
@@ -52,11 +52,8 @@ class ContactTopicModel extends MultilangModel
         return $rules;
     }
 
-    public function getFaqOrder($table)
+    public function getConactTopic($table)
     {
-
-//        $query = $this->db->get_where($table)
-//                           ->order_by('ordering', 'desc');
 
         $query = $this->db->select("*")
             ->from($table)
@@ -114,9 +111,9 @@ class ContactTopicModel extends MultilangModel
     }
 
 
-    public function SaveFaq($data = array())
+    public function SaveContactTopic($data = array())
     {
-        $this->db->update_batch('faq', $data, 'id');
+        $this->db->update_batch('contact_topic', $data, 'id');
     }
 
 }

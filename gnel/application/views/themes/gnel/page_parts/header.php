@@ -29,7 +29,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 padding-lr0">
         <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-3 media padding-l0">
-            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="col-md-2 col-sm-3 col-xs-12">
                 <div class="col-md-12 m-player padding-r0 ">
                     <div id="listContainer" class="playlistContainer">
                         <ul id="playListContainer">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 col-sm-3 col-xs-12 banner">
+            <div class="col-md-6 col-sm-3 col-xs-12 banner">
                 <a href="#">
                     <img src="/themes/gnel/images/site-images/banner.png">
                 </a>
@@ -163,5 +163,56 @@
             </nav>
         </div>
     </div>
-
+    <div class="col-xs-12 slider-container  padding-lr0">
+        <div class="delivery col-xs-12 col-sm-2  padding-lr0">
+            <div class="col-md-12 padding-lr0 col-xs-10 container-left">
+                <div class="text-center">
+                    <a href="#">
+                        <img src="/themes/gnel/images/site-images/e_delivery.png" />
+                        <p>Express Delivery</p>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <a href="#">
+                        <img src="/themes/gnel/images/site-images/r_delivery.png" />
+                        <p>Regular Delivery</p>
+                    </a>
+                </div>
+                <div class="text-center expo">
+                    <a href="#">
+                        <img src="/themes/gnel/images/site-images/expo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="slider col-xs-12 col-sm-10 padding-r0">
+            <img class="todays" src="/themes/gnel/images/site-images/t.png">
+            <div id="slides">
+                <div class="col-xs-12 padding-lr0">
+                    <div class="col-xs-12 col-sm-8">
+                        <img class="s-img" src="/themes/gnel/images/site-images/s.png" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                    </div>
+                    <div class="col-xs-12 col-sm-4 padding-r0">
+                        <div class="col-xs-12 s-info padding-r0" >
+                            <h3 class="text-right">Product name</h3>
+                            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+                            <a href="#" class="see-more">See more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 padding-lr0">
+                    <div class="col-xs-12 col-sm-8">
+                        <img class="s-img" src="/themes/gnel/images/site-images/s.png" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                    </div>
+                    <div class="col-xs-12 col-sm-4 padding-r0">
+                        <div class="col-xs-12 s-info padding-r0" >
+                            <h3 class="text-right">Product name</h3>
+                            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+                            <a href="#" class="see-more">See more...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 

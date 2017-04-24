@@ -9,6 +9,7 @@ if (!defined('BASEPATH'))
  * @property BlogcategoriesModel $BlogcategoriesModel
  * @property PageModel $PageModel
  * @property FaqModel $FaqModel
+ * @property ContactTopicModel $ContactTopicModel
  *
  */
 
@@ -32,6 +33,7 @@ class Ajax extends Main_controller {
         $this->load->model('BrandModel');
         $this->load->model('BlognewsModel');
         $this->load->model('FaqModel');
+        $this->load->model('ContactTopicModel');
     }
 
 //  public $data = array();
@@ -314,6 +316,15 @@ class Ajax extends Main_controller {
             case 'delete_sub_page': {
                 $id = $this->input->post('id');
                 if ($this->PageModel->deleteSubPage('pages', $id))
+                    $this->addLog('Blog News with id: ' . $id . ' is deleted.');
+
+                echo json_encode(array('success' => true));
+                exit;
+                break;
+            }
+            case 'delete_contact_topic': {
+                $id = $this->input->post('id');
+                if ($this->PageModel->deleteSubPage('contact_topic', $id))
                     $this->addLog('Blog News with id: ' . $id . ' is deleted.');
 
                 echo json_encode(array('success' => true));
@@ -672,6 +683,24 @@ class Ajax extends Main_controller {
 						}
 					}
 					$this->PageModel->SaveSubPage($data);
+					echo json_encode(array('html' => 'true'));
+
+					exit;
+					break;
+				}
+
+				case 'save_contact_topic':{
+					$items = $this->input->post('items');
+					$data = array();
+					if(!empty($items)){
+						foreach($items as $item){
+							$data[] = array(
+											'id' => $item['id'],
+											'ordering' => $item['order']
+											);
+						}
+					}
+					$this->ContactTopicModel->SaveContactTopic($data);
 					echo json_encode(array('html' => 'true'));
 
 					exit;

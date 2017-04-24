@@ -132,6 +132,7 @@ class Page extends Main_controller {
     public function contacts() {
 
         $this->data['contacts'] = $this->ContactModel->get('contact', '2');
+        $this->data['contacts_topic'] = $this->ContactTopicModel->getConactTopic('contact_topic');
 
         if($this->input->post('Contact')) {
 
@@ -148,13 +149,11 @@ class Page extends Main_controller {
 
                 if(isset($image_data['upload_data']))
                     $data['image'] = $image_data['upload_data']['file_name'];
+
             }
 
-//                if(($id = $this->ContactModel->insert('contact', $data)) != false) {
-//                    $this->addLog('Added page with id: ' . $id);
-//                }
-
-            if($this->ContactModel->update('contact', $id = 2, $data) != false) {
+            $id = 2 ;
+            if($this->ContactModel->update('contact', $id, $data) != false) {
                 $this->addLog('Edited page with id: ' . $id);
             }
 
@@ -162,10 +161,76 @@ class Page extends Main_controller {
 
             redirect("page/contacts", 'refresh');
 
-
             }
 
         $this->load->view('page/contacts', $this->data);
+    }
+
+    public function addcontact() {
+
+
+        if($this->input->post('Contact_topic')) {
+            $this->form_validation->set_rules($this->ContactTopicModel->rules_add());
+            if($this->form_validation->run()) {
+                $data = $this->input->post('Contact_topic', true);
+
+                $image_data = $this->_do_upload('image', 'contact');
+
+                if(isset($image_data['upload_data']))
+                    $data['image'] = $image_data['upload_data']['file_name'];
+
+
+                if(($id = $this->ContactTopicModel->insert('contact_topic', $data)) != false) {
+                    $this->addLog('Added page with id: ' . $id);
+                }
+
+                $this->session->set_flashdata('message', 'add_success');
+                redirect("page/contacts/", 'refresh');
+
+            }
+        }
+
+        $this->load->view('page/addcontact');
+    }
+
+    public function editcontact($id) {
+
+        if(!isset($id)) show_404();
+
+        $this->data['contact_topic'] = $this->ContactTopicModel->get('contact_topic', $id);
+        if($this->data['contact_topic'] == false) show_404();
+
+        if($this->input->post('Contact_topic')) {
+            $this->form_validation->set_rules($this->ContactTopicModel->rules_edit());
+            if($this->form_validation->run()) {
+                $data = $this->input->post('Contact_topic', true);
+
+                $old_image = $this->data['contact_topic']['image'];
+
+
+                if(!empty($_FILES['image']['name']))
+                {
+                    $image_data = $this->_do_upload('image', 'contact');
+//                    echo '<pre>'; print_r($image_data); die;
+
+                    if(isset($old_image))
+                        $this->_delete_img($old_image, 'contact');
+
+                    if(isset($image_data['upload_data']))
+                        $data['image'] = $image_data['upload_data']['file_name'];
+                }
+
+                if($this->ContactTopicModel->update('contact_topic', $id, $data) != false) {
+                    $this->addLog('Edited page with id: ' . $id);
+                }
+
+                $this->session->set_flashdata('message', 'add_success');
+                redirect("page/contacts/", 'refresh');
+
+            }
+        }
+
+        $this->load->view('page/editcontact', $this->data);
     }
 
     public function faq() {
@@ -184,7 +249,7 @@ class Page extends Main_controller {
                     $this->addLog('Added page with id: ' . $id);
                 }
 
-                $this->session->set_flashdata('message', 'add_success');
+                $this->session->set_flashdata('message', 'edit_success');
                 redirect("page/faq/", 'refresh');
 
             }

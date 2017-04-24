@@ -87,7 +87,8 @@ class BlogModel extends MultilangModel {
 		if($filter){
 			$this->db->where($filter);
 		}
-		$this->db->order_by('blognews.date_created', 'DESC');
+//		$this->db->order_by('blognews.date_created', 'DESC');
+		$this->db->order_by('blognews.ordering', 'ASC');
 		$this->db->distinct();
 		$this->db->limit($limit, $offset);
         $query = $this->db->get();

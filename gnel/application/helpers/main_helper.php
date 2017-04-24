@@ -331,27 +331,31 @@ function drawMenu($top_menu_pages, $attributes = array()) {
     if ($count > 0) {
         foreach ($top_menu_pages AS $page) {
             $i++;
-            $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
+            if($page->parent_id == 0) {
+                $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
 
-            //var_dump(strpos($page['url'], 'http://'));echo "<br/>";
-            if (strpos($page['url'], '/') === 0) {
-                $url = site_url($page['url']);
-            } else if (strpos($page['url'], 'http://') === 0) {
-                $url = $page['url'];
-            } else {
-                $url = site_url('page/' . $page['url']);
+                //var_dump(strpos($page->url, 'http://'));echo "<br/>";
+                if (strpos($page->url, '/') === 0) {
+                    $url = site_url($page->url);
+                } else if (strpos($page->url, 'http://') === 0) {
+                    $url = $page->url;
+                } else {
+                    $url = site_url('page/' . $page->url);
+                }
+                $html .= '<a href="' . $url . '">' . $page->title . '</a>';
+                if (isset($page->children)) {
+                    $html .= drawMenu($page->children);
+                }
+                $html .= '</li>';
             }
-            $html .= '<a href="' . $url . '">' . $page['name'] . '</a>';
-            if (isset($page['children'])) {
-                $html .= drawMenu($page['children']);
-            }
-            $html .= '</li>';
 
         }
     }
     $html .= '</ul>';
     return $html;
 }
+
+
 
 function generateRandomString($length = 32) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

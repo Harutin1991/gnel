@@ -43,7 +43,6 @@ class Blog extends MY_Controller {
         }elseif(!$this->input->get('page')){
             $this->data["blognews"] = $this->BlogModel->getLastBlognews();
         }
-//        echo "<pre>";print_r($this->data["blognews"]);exit;
 
         $special_news = $this->BlogModel->getSpecialBlognews();
        if(!empty($special_news) && isset($special_news[0]) ){

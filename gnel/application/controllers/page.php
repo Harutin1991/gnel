@@ -28,7 +28,8 @@ class Page extends MY_Controller {
 	public function item($url = 'Information') {
 
         $this->data['url'] = $url;
-        $this->data['page'] = $this->PageModel->getPageData($url);
+        $this->data['pages'] = $this->PageModel->getPageData($url);
+//        print_r($this->data['pages']); die;
 
         if(empty($this->data['page'])) {
             redirect(site_url('page/Information'));
