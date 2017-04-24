@@ -244,7 +244,6 @@ class BlognewsModel extends MultilangModel {
 
     public function SaveBlog($data = array()) {
         $this->db->update_batch('blognews', $data, 'id');
-
     }
 
 }

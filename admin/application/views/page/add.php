@@ -58,6 +58,10 @@
                                                 <?php editor("Page[text_" . $language->code . "]", 'page_text_' . $language->code, set_value('Page[text_' . $language->code . ']')); ?>
                                                 <div class="error"><?php echo form_error('Page[text_' . $language->code . ']'); ?></div>
 
+                                                <?php if(!empty($parent_id)) {?>
+                                                    <input name="Page[parent_id]" value="<?php echo set_value('Page[parent_id]', $parent_id); ?>" type="hidden" class="form-control" id="paren_id">
+                                                <?php }?>
+
                                             </div>
                                         <?php } ?>
                                     </div>

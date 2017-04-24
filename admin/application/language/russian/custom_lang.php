@@ -4,11 +4,11 @@ $lang['Language']										= "Язык";
 $lang['language']										= "язык";
 $lang['Languages']										= "Языки";
 $lang['languages']										= "языки";
-$lang['Add language']									= "Добавлять язык";
+$lang['Add language']									= "Добавить язык";
 $lang['Code']											= "Код";
 $lang['Name']											= "Имя";
 $lang['Actions']										= "Действия";
-$lang['Add']											= "Добавлять";
+$lang['Add']											= "Добавить";
 $lang['Edit']											= "Редактировать";
 $lang['Yes']											= "Да";
 $lang['No']												= "Нет";
@@ -183,6 +183,14 @@ $lang['Sign out']									        = "Выход";
 $lang['admin_title']									    = "Админ";
 $lang['contact']									        = "Контакт";
 $lang['faq']									            = "Часто задаваемые вопросы";
+$lang['sections']									        = "Разделы";
+$lang['back']									            = "Назад";
+$lang['add_a_question']									    = "Добавить вопрос";
+$lang['question']									        = "Вопрос";
+$lang['answer']									            = "Ответ";
+$lang['add_topic']									        = "Добавить тему";
+
+
 
 
 

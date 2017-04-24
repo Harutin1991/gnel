@@ -194,5 +194,15 @@ $lang['Sign out']									        = "Դուրս գալ";
 $lang['admin_title']									    = "Ադմին";
 $lang['contact']									        = "Կապ";
 $lang['faq']									            = "Հաճախ տրվող հարցեր";
+$lang['sections']									        = "Բաժիներ";
+$lang['back']									            = "Նախորթ էջ";
+$lang['add_a_question']									    = "Ավելացնել հարց";
+$lang['question']									        = "Հարց";
+$lang['answer']									            = "Պատասխան";
+$lang['add_topic']									        = "Ավելացնել թեմա";
+
+
+
+
 
 

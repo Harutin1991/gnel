@@ -21,16 +21,6 @@
                         <?php echo $item->title; ?>
                     </td>
                     <td class="">
-                        <a class="btn btn-success" href="<?php echo base_url("page/addSubPage/" . $item->id); ?>" >
-                            <i class="glyphicon glyphicon-plus icon-white"></i>
-                            <?php echo $this->lang->line('Create sub page'); ?>
-                        </a>
-
-                        <a class="btn btn-primary" href="<?php echo base_url("page/subPages/" . $item->id); ?>" >
-                            <i class="glyphicon glyphicon-chevron-down icon-white"></i>
-                            <?php echo $this->lang->line('Show sub pages'); ?>
-                        </a>
-
                         <a class="btn btn-info" href="<?php echo base_url("page/edit/" . $item->id); ?>" >
                             <i class="glyphicon glyphicon-edit icon-white"></i>
                             <?php echo $this->lang->line('Edit'); ?>

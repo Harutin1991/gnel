@@ -37,8 +37,7 @@ class PageModel extends MultilangModel {
                     'label'   => $this->ci->lang->line("Title"), 
                     'rules'   => 'required|max_length[255]', 
                 );
-			}
-            else { 
+			} else {
                 $rules[] = array(
                     'field'   => 'Page[title_'.$language->code.']', 
                     'label'   => $this->ci->lang->line("Title"), 
@@ -55,20 +54,65 @@ class PageModel extends MultilangModel {
         
         return $rules;
     }
-    
+
+    public function rules_add_faq() {
+        $rules = array();
+
+        $languages = $this->getLanguages();
+        $default_language = $this->getDefultLanguage();
+
+        foreach($languages as $language){
+
+            if($language->code == $default_language) {
+                $rules[] = array(
+                    'field'   => 'Page[question_'.$language->code.']',
+                    'label'   => $this->ci->lang->line("Title"),
+                    'rules'   => 'required|max_length[255]',
+                );
+            } else {
+                $rules[] = array(
+                    'field'   => 'Page[question_'.$language->code.']',
+                    'label'   => $this->ci->lang->line("Title"),
+                    'rules'   => 'max_length[255]',
+                );
+            }
+
+            return $rules;
+        }
+    }
+
     public function rules_edit() {
         $rules = $this->rules();
         
         return $rules;
     }
 
+    public function deleteSubPage($table, $id) {
+        $pk = $this->getPkName($table);
+        $query = $this->db->where($pk, $id)
+            ->delete($table);
+
+        if ($this->db->affected_rows()) {
+            $query = $this->db->where("id", $id);
+            return true;
+        }
+        return false;
+    }
+
     public function getPageChildes($table, $id) {
 
-        $query = $this->db->get_where($table, array('parent_id' => $id));
+//        $query = $this->db->get_where($table, array('parent_id' => $id))
+//                           ->order_by('ordering', 'desc');
+
+        $query = $this->db->select("*")
+            ->from($table)
+            ->where('parent_id', $id)
+            ->order_by('ordering', 'asc')
+            ->get();
+
 
         if ($query->num_rows() > 0) {
             $record = $query->result_array();
-//            print_r($record); die;
 
             for ($i = 0; $i < count($record); $i++) {
                 if (count($record) > 0) {
@@ -102,6 +146,10 @@ class PageModel extends MultilangModel {
             return $record;
         }
 
+    }
+
+    public function SaveSubPage($data = array()) {
+        $this->db->update_batch('pages', $data, 'id');
     }
 
 }

@@ -6,12 +6,74 @@
     </div>
 <?php endif; ?>
 
+<?php if (!empty($pages)) { ?>
+    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <?php echo $this->lang->line('sections'); ?>
+                    </h2>
+                    <div class="box-icon">
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="<?php echo base_url("page/add/" . $page['id']); ?>" >
+                            <i class="glyphicon glyphicon-plus icon-white"></i>
+                            <?php echo $this->lang->line('Create sub page'); ?>
+                        </a>
+                    </div>
+                    <div class="clear"></div><br>
+                    <table>
+                        <tbody>
+                            <div>
+                                <div class="box-content" id="blog">
+                                    <div>
+                                        <ul id="sortable" class="ui-sortable">
+                                            <?php foreach ($pages as $item) { ?>
+                                                <li class="ui-state-default ui-sortable-handle  blog" id="li<?php echo $item['id']; ?>" item_id="<?php echo $item['id']; ?>">
+                                                    <?php echo $item['title'];  ?>
+
+                                                    <a class="delete" alt="<?php echo $item['id']; ?>" >
+                                                        <span url="<?php echo $item['id']; ?>" item_title="<?php echo $item['title'];  ?>" item_id="<?php echo $item['id']; ?>" class="edit btn btn-mini btn-danger edit_menu_item">
+                                                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                                                            <?php  echo $this->lang->line('Delete'); ?>
+                                                        </span>
+                                                    </a>
+                                                    <a href="<?php echo base_url(); ?>page/edit/<?php echo $item['id']; ?>">
+                                                        <span url="<?php echo $item['id']; ?>" item_title="<?php echo $item['title'];  ?>" item_id="<?php echo $item['id']; ?>" class="edit btn btn-mini btn-info edit_menu_item">
+                                                            <i class="glyphicon glyphicon-edit icon-white"></i>
+                                                            <?php  echo $this->lang->line('Edit'); ?>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br />
+                                <img style="position:absolute;left:30%;top:70px;display:none;" class="ajax_loader" src="/img/ajax_loader.gif" />
+                                <span id="save" class="btn btn-primary"><?php echo $this->lang->line('Save order'); ?></span>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
                 <h2>
-                    <i class="glyphicon glyphicon-list-alt"></i> 
+                    <i class="glyphicon glyphicon-list-alt"></i>
                     <?php echo $this->lang->line('Edit'); ?>
                 </h2>
                 <div class="box-icon">
@@ -19,51 +81,18 @@
                 </div>
             </div>
             <div class="box-content">
-                <table>
-                    <tbody>
-<!--                    --><?php //echo '<pre>'; print_r($pages); die; ?>
-                    <?php if (!empty($pages)) { ?>
-                        <div>
-                            <div class="box-content" id="blog">
-                                <div>
-                                    <ul id="sortable" class="ui-sortable">
-                                        <?php foreach ($pages as $item) { ?>
-                                            <li class="ui-state-default ui-sortable-handle  blog" id="li<?php echo $item['id']; ?>" item_id="<?php echo $item['id']; ?>">
-                                                <?php echo $item['title'];  ?>
-
-                                                <a class="delete" alt="<?php echo $item['id']; ?>" >
-                                                    <span url="<?php echo $item['id']; ?>" item_title="<?php echo $item['title'];  ?>" item_id="<?php echo $item['id']; ?>" class="edit btn btn-mini btn-danger edit_menu_item">
-														<i class="glyphicon glyphicon-trash icon-white"></i>
-                                                        <?php  echo $this->lang->line('Delete'); ?>
-													</span>
-                                                </a>
-                                                <a href="<?php echo base_url(); ?>blognews/edit/<?php echo $item['id']; ?>">
-													<span url="<?php echo $item['id']; ?>" item_title="<?php echo $item['title'];  ?>" item_id="<?php echo $item['id']; ?>" class="edit btn btn-mini btn-info edit_menu_item">
-														<i class="glyphicon glyphicon-edit icon-white"></i>
-                                                        <?php  echo $this->lang->line('Edit'); ?>
-													</span>
-                                                </a>
-                                            </li>
-                                        <?php } ?>
-                                    </ul>
-                                </div>
-                            </div>
-                            <br />
-                            <img style="position:absolute;left:30%;top:70px;display:none;" class="ajax_loader" src="img/ajax_loader.gif" />
-                            <span id="save" class="btn btn-primary"><?php echo $this->lang->line('Save order'); ?></span>
-
-                        </div>
-                    <?php } else { ?>
-                        <tr>
-                            <td>
-                                <?php echo $this->lang->line('No items to show.'); ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="box-content">
+                <?php if (empty($pages)) {?>
+                    <div class="pull-right">
+                        <a class="btn btn-default" href="<?php echo base_url("page/edit/" . $page['parent_id']); ?>" >
+                            <i class="glyphicon glyphicon-arrow-left icon-white"></i>
+                            <?php echo $this->lang->line('back'); ?>
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+                    <hr>
+                <?php } ?>
+<!--                <h3 style="margin: 20px">--><?php // echo $this->lang->line('Edit'); ?><!--</h3>-->
+<!--                <hr>-->
                 <table>
                     <form method="POST" enctype="multipart/form-data">
                         <tbody>
@@ -91,7 +120,7 @@
                                                 <label class="control-label" for="Page[meta_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('Meta description'); ?></label>
                                                 <input name="Page[meta_description_<?php echo $language->code; ?>]" value="<?php echo set_value('Page[meta_description_' . $language->code . ']', $page['meta_description_' . $language->code]); ?>" type="text" class="form-control" id="meta_description">
                                                 <div class="error"><?php echo form_error('Page[meta_description_' . $language->code . ']'); ?></div>
-                                              
+
                                                 <br />
                                                 <label class="control-label" for="Page[short_description_<?php echo $language->code; ?>]"><?php echo $this->lang->line('short description'); ?></label>
 <!--                                                <textarea name="Page[short_description_--><?php //echo $language->code; ?><!--]"  class="form-control" id="short_description">--><?php //echo set_value('Page[short_description_' . $language->code . ']', $page['short_description_' . $language->code]); ?><!-- </textarea>-->
@@ -150,22 +179,6 @@
             $( "#sortable" ).disableSelection();
         });
 
-
-        $('span[status="change"]').click(function() {
-            var action = $(this).attr('action');
-            var table = 'blognews';
-            var id = $(this).attr('id');
-            $.ajax({
-                url: base_url + "ajax",
-                dataType: 'json',
-                type: 'post',
-                data: {'action': action, 'table':table, 'id': id, },
-                success: function(data) {
-                    location.reload();
-                }
-            });
-        });
-
         $('#save').click(function() {
             $('.ajax_loader').show();
             $('#save').hide();
@@ -176,11 +189,12 @@
                     order:  key + 1
                 });
             });
+            console.log(items);
             $.ajax({
                 url: base_url + "ajax",
                 dataType: 'json',
                 type: 'post',
-                data: {'action': 'save_blog', 'items':items },
+                data: {'action': 'save_sub_page', 'items':items },
                 success: function(data) {
                     $('.ajax_loader').hide();
                     $('#save').show();
@@ -194,6 +208,7 @@
 
     $('.delete').click(function() {
         var id = $(this).attr('alt');
+        console.log(id);
 
         $.msgBox({
             title: '<?php echo $this->lang->line('Delete'); ?>',
@@ -206,7 +221,7 @@
                         url: base_url + "ajax",
                         dataType: 'json',
                         type: 'post',
-                        data: {'action': 'delete_blog', 'id': id},
+                        data: {'action': 'delete_sub_page', 'id': id},
                         success: function(data) {
                             if (data.success == true)
                                 $('#li' + id).fadeOut(2000, function() {
@@ -222,9 +237,7 @@
         });
     });
 
-        setTimeout(function() {
-            $('.noty').trigger('click');
-        }, 1000);
+
 
         $('#image').bind("change", function(e) {
             readURL(this);
@@ -241,7 +254,7 @@
             }
         }
 
-    });
+
 
     $(function() {
         $('#myTab a:last').tab('show');

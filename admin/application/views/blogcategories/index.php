@@ -42,7 +42,7 @@
 								</div>
 							</div>
                             <br />
-							<img style="position:absolute;left:30%;top:70px;display:none;" class="ajax_loader" src="img/ajax_loader.gif" />
+							<img style="position:absolute;left:30%;top:70px;display:none;" class="ajax_loader" src="/img/ajax_loader.gif" />
                             <span id="save" class="btn btn-primary"><?php echo $this->lang->line('Save order'); ?></span>
                         </div>
                     <?php } else { ?>

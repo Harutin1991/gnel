@@ -8,6 +8,7 @@ if (!defined('BASEPATH'))
  * @property MenuItemModel $MenuItemModel
  * @property BlogcategoriesModel $BlogcategoriesModel
  * @property PageModel $PageModel
+ * @property FaqModel $FaqModel
  *
  */
 
@@ -30,6 +31,7 @@ class Ajax extends Main_controller {
         $this->load->model('OptionsModel');
         $this->load->model('BrandModel');
         $this->load->model('BlognewsModel');
+        $this->load->model('FaqModel');
     }
 
 //  public $data = array();
@@ -303,6 +305,25 @@ class Ajax extends Main_controller {
             case 'delete_blog': {
                 $id = $this->input->post('id');
                 if ($this->BlognewsModel->deleteBlogItem('blognews', $id))
+                    $this->addLog('Blog News with id: ' . $id . ' is deleted.');
+
+                echo json_encode(array('success' => true));
+                exit;
+                break;
+            }
+            case 'delete_sub_page': {
+                $id = $this->input->post('id');
+                if ($this->PageModel->deleteSubPage('pages', $id))
+                    $this->addLog('Blog News with id: ' . $id . ' is deleted.');
+
+                echo json_encode(array('success' => true));
+                exit;
+                break;
+            }
+
+            case 'delete_faq': {
+                $id = $this->input->post('id');
+                if ($this->FaqModel->deleteFaq('faq', $id))
                     $this->addLog('Blog News with id: ' . $id . ' is deleted.');
 
                 echo json_encode(array('success' => true));
@@ -599,10 +620,27 @@ class Ajax extends Main_controller {
 					
 					exit;
 					break;	
+				}case 'save_blog_categories':{
+					$this->load->model('BlogcategoriesModel');
+					$items = $this->input->post('items');
+					$data = array();
+					if(!empty($items)){
+						foreach($items as $item){
+							$data[] = array(
+											'id' => $item['id'],
+											'order' => $item['order']
+											);
+						}
+					}
+					$this->BlogcategoriesModel->SaveBlogCategories($data);
+					echo json_encode(array('html' => 'true'));
+
+
+					exit;
+					break;
 				}
 
 				case 'save_blog':{
-					$this->load->model('BlognewsModel');
 					$items = $this->input->post('items');
 					$data = array();
 					if(!empty($items)){
@@ -616,6 +654,46 @@ class Ajax extends Main_controller {
 					$this->BlognewsModel->SaveBlog($data);
 					echo json_encode(array('html' => 'true'));
 
+
+					exit;
+					break;
+				}
+
+				case 'save_sub_page':{
+					$this->load->model('PageModel');
+					$items = $this->input->post('items');
+					$data = array();
+					if(!empty($items)){
+						foreach($items as $item){
+							$data[] = array(
+											'id' => $item['id'],
+											'ordering' => $item['order']
+											);
+						}
+					}
+					$this->PageModel->SaveSubPage($data);
+					echo json_encode(array('html' => 'true'));
+
+					exit;
+					break;
+				}
+
+				case 'save_faq':{
+					$items = $this->input->post('items');
+
+                    $data = array();
+					if(!empty($items)){
+						foreach($items as $item){
+							$data[] = array(
+											'id' => $item['id'],
+											'ordering' => $item['order']
+											);
+						}
+					}
+//                    var_dump($data); die;
+
+                    $this->FaqModel->SaveFaq($data);
+					echo json_encode(array('html' => 'true'));
 
 					exit;
 					break;

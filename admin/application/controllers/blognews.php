@@ -52,7 +52,7 @@ class Blognews extends Main_controller {
         $this->data['pr_string'] = $this->bn_string;
         $this->data['pr_perpage'] = $this->bn_perpage;
         $this->data['page_number'] = 1;
-        $result = $this->BlognewsModel->getAllBlognews('DESC', $this->bn_string, $this->bn_perpage, $this->data['page_number']);
+        $result = $this->BlognewsModel->getAllBlognews('ASC', $this->bn_string, $this->bn_perpage, $this->data['page_number']);
 
         $this->data['blognews'] = $result['blognews'];
         $data_count = $result["total"];
@@ -62,7 +62,6 @@ class Blognews extends Main_controller {
 
     public function add() {
         if ($this->input->post('Blognews')) {
-//            echo'<pre>'; print_r($this->input->post('Blognews')); die;
             $this->form_validation->set_rules($this->BlognewsModel->rules());
 
             if ($this->form_validation->run()) {
@@ -80,7 +79,7 @@ class Blognews extends Main_controller {
                 }
 
                 $this->session->set_flashdata('message', 'add_success');
-                redirect("blognews/edit/$id", 'refresh');
+                redirect("blognews/index/", 'refresh');
             }
         }
         $blogcategories = $this->BlognewsModel->getBlogCategories();

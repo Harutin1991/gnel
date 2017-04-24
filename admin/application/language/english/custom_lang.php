@@ -184,6 +184,13 @@ $lang['Sign out']									        = "Sign out";
 $lang['admin_title']									    = "Admin";
 $lang['contact']									        = "Contact";
 $lang['faq']									            = "FAQ";
+$lang['sections']									        = "Sections";
+$lang['back']									            = "Back";
+$lang['add_a_question']									    = "Add a question";
+$lang['question']									        = "Question";
+$lang['answer']									            = "Answer";
+$lang['add_topic']									            = "Add topic";
+
 
 
 
