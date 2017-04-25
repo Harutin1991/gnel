@@ -83,6 +83,7 @@ class Page extends Main_controller {
         if(!isset($id)) show_404();
         $this->data['page'] = $this->PageModel->get('pages', $id);
         if($this->data['page'] == false) show_404();
+
         $this->data['pages'] = $this->PageModel->getPageChildes('pages', $id);
         $parent_id = $this->data['page']['parent_id'];
 

@@ -1,18 +1,28 @@
+<div class="col-sm-11 container">
     <div class="col-xs-12 footer-container padding-lr0">
         <div class="col-sm-3 col-xs-12 l-f-menu text-center padding-l0">
             <div class="col-md-12 evaluate text-center padding-lr0">
-                <p><i>Evaluate the quality of service</i></p>
-                <div class="star-rating">
+                <p><i><?php echo $this->lang->line('evaluate_the_quality_of_service'); ?></i></p>
+                <div class="star-rating hidden">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-empty"></i>
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
+				<div class="vote">
+					<div class="rating">
+						<input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+						<input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+						<input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+						<input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+						<input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+					</div>
+				</div>
             </div>
             <div class="col-md-12 porposals text-center padding-lr0">
-                <p><i>Proposals and complaints</i></p>
-                <p><span>Hot line</span> +374 91 000 000</p>
+                <p><i><?php echo $this->lang->line('proposals_and_complaints'); ?></i></p>
+                <p><span><?php echo $this->lang->line('hot_line'); ?></span> +374 91 000 000</p>
             </div>
             <div class="col-md-12 cards text-center padding-lr0">
                 <img src="/themes/gnel/images/site-images/cards.png" / >
@@ -25,40 +35,10 @@
 <!--                --><?php //echo print_r($page); die; ?>
                 <?php echo drawMenu($page, array("class" => "menu_footer_item text_item")); ?>
 
-<!--                <ul class="col-sm-3 col-xs-6">-->
-<!--                    <li><a href="#">About us</a></li>-->
-<!--                    <li><a href="#">Our works</a></li>-->
-<!--                    <li><a href="#">Our contacts</a></li>-->
-<!--                    <li><a href="#">Requisites</a></li>-->
-<!--                    <li><a href="#">Our partners</a></li>-->
-<!--                </ul>-->
-<!--                <ul class="col-sm-3 col-xs-6">-->
-<!--                    <li><a href="#">Sell from us</a></li>-->
-<!--                    <li><a href="#">Advertising</a></li>-->
-<!--                    <li><a href="#">Partnership</a></li>-->
-<!--                    <li><a href="#">Other services</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--            <div class="fm">-->
-<!--                <ul class="col-sm-3 col-xs-6">-->
-<!--                    <li><a href="#">Recipes</a></li>-->
-<!--                    <li><a href="#">Usefull tips</a></li>-->
-<!--                    <li><a href="#">How to lose weight</a></li>-->
-<!--                    <li><a href="#">Healthy food</a></li>-->
-<!--                    <li><a href="#">Recommendations</a></li>-->
-<!--                </ul>-->
-<!--                <ul class="col-sm-3 col-xs-6">-->
-<!--                    <li><a href="#">Our news</a></li>-->
-<!--                    <li><a href="#">For media</a></li>-->
-<!--                    <li><a href="#">Weather forecast</a></li>-->
-<!--                    <li><a href="#">Currency exchange</a></li>-->
-<!--                    <li><a href="--><?php //echo base_url('blog')?><!--">Our blog</a></li>-->
-<!--                </ul>-->
-
                 <ul class="col-sm-3 col-xs-6">
-                    <li><a href="<?php echo base_url('faq')?>">Faq</a></li>
-                    <li><a href="<?php echo base_url('blog')?>">Our blog</a></li>
-                    <li><a href="<?php echo base_url('contact')?>">Contact</a></li>
+                    <li><a href="<?php echo base_url('faq')?>"><?php echo $this->lang->line('faq'); ?></a></li>
+                    <li><a href="<?php echo base_url('blog')?>"><?php echo $this->lang->line('our_blog'); ?></a></li>
+                    <li><a href="<?php echo base_url('contact')?>"><?php echo $this->lang->line('Contact us'); ?></a></li>
                 </ul>
 
 
@@ -68,23 +48,25 @@
     <div class="col-xs-12 design padding-lr0">
 
         <div class="col-xs-12 col-sm-6 text-left" style="padding: 0">
-            <div class="col-xs-12 col-sm-6 text-center social_icon">
-                <a href="#"><img src="/themes/gnel/images/site-images/fb.png"></a>
-                <a href="#"><img src="/themes/gnel/images/site-images/vk.png"></a>
-                <a href="#"><img src="/themes/gnel/images/site-images/insta.png"></a>
-                <a href="#"><img src="/themes/gnel/images/site-images/ytd.png"></a>
+            <div class="col-xs-12 col-sm-12 text-left social_icon">
+                <a href="https://www.facebook.com/" target="_blank"><img src="/themes/gnel/images/social/fb.png"></a>
+				<a href="https://vk.com/" target="_blank"><img src="/themes/gnel/images/social/vk.png"></a>
+				<a href="https://www.instagram.com/" target="_blank"><img src="/themes/gnel/images/social/instagram.png"></a>
+				<a href="https://www.youtube.com/" target="_blank"><img src="/themes/gnel/images/social/youtube.png"></a>
+				<a href="https://twitter.com/?lang=ru" target="_blank"><img src="/themes/gnel/images/social/twiter.png"></a>
+				<a href="https://plus.google.com/collections/featured" target="_blank"><img src="/themes/gnel/images/social/gplus.png"></a>
+				<a href="https://ok.ru/" target="_blank"><img src="/themes/gnel/images/social/ok.png"></a>
+				<a href="view-source:http://gnel-front.atalyanstudio.am/" target="_blank"><img src="/themes/gnel/images/social/rss.png"></a>
             </div>
         </div>
 
 <!--        <p class="col-xs-12 col-sm-6 text-left padding-lr0">-->
 <!--            <i>made in Armenia</i>-->
 <!--        </p>-->
-        <p class="col-xs-12 col-sm-6 text-right padding-lr0">
-            <i>Design and development by <a href="#">ASTUDIO</a></i>
+        <p class="col-xs-12 col-sm-6 text-right padding-lr0 company">
+            <i><a href="http://astudio.am/" target="_blank" title="Design and development">Design and development by</a> ASTUDIO</i>
         </p>
     </div>
-    </div>
-    </div>
-
 </div>
-<div class="support"><p>On-line SUPPORT</p></div>
+
+<!--<div class="support"><p>On-line SUPPORT</p></div>-->

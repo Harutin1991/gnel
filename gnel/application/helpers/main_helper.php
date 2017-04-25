@@ -302,7 +302,7 @@ function category_url($category_id, $category_name) {
 }
 function blognews_url($blog_id, $blog_name) {
     $url = '';
-    $url = 'blognews/'. $blog_name . '-b' . $blog_id . '.html';
+    $url = 'blog/'. $blog_name . '-b' . $blog_id . '.html';
 
     $url = str_replace(' ', '-', $url);
     $url = str_replace(',', '', $url);
@@ -335,14 +335,14 @@ function drawMenu($top_menu_pages, $attributes = array()) {
                 $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
 
                 //var_dump(strpos($page->url, 'http://'));echo "<br/>";
-                if (strpos($page->url, '/') === 0) {
-                    $url = site_url($page->url);
-                } else if (strpos($page->url, 'http://') === 0) {
-                    $url = $page->url;
+                if (strpos($page->id, '/') === 0) {
+                    $id = site_url($page->id);
+                } else if (strpos($page->id, 'http://') === 0) {
+                    $id = $page->id;
                 } else {
-                    $url = site_url('page/' . $page->url);
+                    $id = site_url('page/' . $page->id);
                 }
-                $html .= '<a href="' . $url . '">' . $page->title . '</a>';
+                $html .= '<a href="' . $id . '">' . $page->title . '</a>';
                 if (isset($page->children)) {
                     $html .= drawMenu($page->children);
                 }

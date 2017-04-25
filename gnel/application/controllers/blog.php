@@ -53,60 +53,11 @@ class Blog extends MY_Controller {
         $page_count = $this->BlogModel->getCountNews();
         $this->data['popular'] = $this->BlogModel->getPopularNews();
         $this->data['page_count'] = ceil($page_count[0]->count_news / $this->blg_perpage);
-/*        echo '<pre>'; print_r($this->data["blognews"]); die;*/
         $this->load->view('blog/latest', $this->data);
+
     }
 
-	public function category($id = null){
-		if($id){
-            $page_num = $this->input->get('page', true);
-            $this->data['old_id'] = $id;
-            $where['blognews.blognews_category_id'] = $id;
-            $this->data["blognews"] = array();
-            if(preg_match('/^[1-9][0-9]{0,3}$/', $page_num)) {
-                $this->data["blognews"] = $this->BlogModel->getLastBlognews($where, $page_num);
-            }
-            $page_count = $this->BlogModel->getCountNews($where);
-           // $this->data['blog_ccategories'] = $this->BlogModel->getBlogCategories();
-           // $this->data['archives'] = $this->BlogModel->getBlogArchive();
-            $this->data['page_count'] = ceil($page_count[0]->count_news / $this->blg_perpage);
-            $this->data['popular'] = $this->BlogModel->getPopularNews();
-            $this->load->view('blog/latest', $this->data);
 
-		}else{
-            redirect('blog');
-		}
-	}
-
-	public function archive($date = null){
-		if($date){
-			$Stamp = strtotime( $date );
-			$Month = date( 'm', $Stamp );
-			$Day   = date( 'd', $Stamp );
-			$Year  = date( 'Y', $Stamp );
-			if(checkdate( $Month, $Day, $Year )){
-				$where ="MONTH(blognews.date_created)='$Month'";
-                $this->data['old_id'] = $Month;
-				//$result = $this->BlogModel->getLastBlognews($where);
-                $page_num = $this->input->get('page', true);
-                $page_count = $this->BlogModel->getCountNews($where);
-                $this->data['popular'] = $this->BlogModel->getPopularNews();
-                $this->data["blognews"] = array();
-                if(preg_match('/^[1-9][0-9]{0,3}$/', $page_num)) {
-                    $this->data["blognews"] = $this->BlogModel->getLastBlognews($where, $page_num);
-                }
-				//$this->data['blog_ccategories'] = $this->BlogModel->getBlogCategories();
-				//$this->data['archives'] = $this->BlogModel->getBlogArchive();
-                $this->data['page_count'] = ceil($page_count[0]->count_news / $this->blg_perpage);
-				//$this->load->view('blog/latest', $this->data);
-			}
-            $this->load->view('blog/latest', $this->data);
-		}else{
-            redirect('blog');
-		}
-		
-		//return $result;
-	}
    public function item($title = NULL){
        //echo 'Hello'; exit;
         if (!isset($title)) {

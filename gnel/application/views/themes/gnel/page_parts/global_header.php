@@ -1,6 +1,7 @@
 
 <?php $this->load->view('themes/gnel/page_parts/head.php');?>
-<body>
+
+<body class="font_lang_<?php echo $lang;?>">
 <?php //$this->load->view('themes/gnel/page_parts/mobile_menu.php');?>
 
 <div id="content-snap" class="snap-content">

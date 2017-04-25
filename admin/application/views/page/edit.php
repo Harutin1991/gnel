@@ -7,6 +7,7 @@
 <?php endif; ?>
 
 <?php if (!empty($pages)) { ?>
+
     <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
@@ -61,11 +62,13 @@
                             </div>
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
     </div>
 <?php } ?>
+
 
 
 <div class="row">

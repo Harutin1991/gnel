@@ -39,29 +39,21 @@
 */
 
 
-$route['^(\w{2})/product/search/(.*)$'] = 'product/search/$2';
-$route['^product/search/(.*)$'] = 'product/search/$1';
 
-$route['^(\w{2})/product/(.*)$'] = 'product/item/$2';
-$route['^product/(.*)$'] = 'product/item/$1';
 
-$route['^(\w{2})/category/(.*)$'] = 'category/item/$2';
-$route['^category/(.*)$'] = 'category/item/$1';
 
-$route['^(\w{2})/brand/(.*)$'] = 'brands/item/$2';
-$route['^brand/(.*)$'] = 'brands/item/$1';
+//
+//$route['^(\w{2})/page/(.*)$'] = 'page/item/$2';
+//$route['^page/(.*)$'] = 'page/item/$1';
 
-$route['^(\w{2})/page/(.*)$'] = 'page/item/$2';
-$route['^page/(.*)$'] = 'page/item/$1';
+$route['^(\w{2})/page/(:any)/(:any)'] = 'page/item/$2/$1';
+$route['^page/(:any)/(:any)'] = 'page/item/$2/$1';
 
-//$route['^(\w{2})/(:any)/(:any)'] = 'page/item/$2/$1';
-//$route['^(:any)/(:any)'] = 'page/item/$2/$1';
+$route['^(\w{2})/page/(:any)'] = 'page/item/$2';
+$route['^page/(:any)'] = 'page/item/$1';
 
-//$route['^(\w{2})/(:any)'] = 'page/item/$2';
-//$route['^(:any)'] = 'page/item/$1';
-
-$route['^(\w{2})/blognews/(.*)$'] = 'blog/item/$2';
-$route['^blognews/(.*)$'] = 'blog/item/$1';
+$route['^(\w{2})/blog/(.*)$'] = 'blog/item/$2';
+$route['^blog/(.*)$'] = 'blog/item/$1';
 
 $route['default_controller'] = "home";
 $route['404_override'] = '';

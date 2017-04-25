@@ -13,12 +13,12 @@ class PageModel extends MultilangModel {
         $this->setAttributesT('pages_t', array('title', 'meta_description', 'short_description', 'text'), 'lang_code', 'page_id');
     }
 
-    public function getPageData($url) {
+    public function getPageData($id) {
 		$query = $this->db
                 ->select('pages_t.*,  pages.url AS url, pages.parent_id AS parent_id, pages.image AS image')
                 ->from('pages')
 				->join('pages_t', "pages.id = pages_t.page_id", 'left')
-                ->where('pages.url', $url)
+                ->where('pages.id', $id)
 				->where('pages_t.lang_code', $this->config->item('language'))
                 ->get();
 		$result = array();

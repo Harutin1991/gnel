@@ -2,15 +2,15 @@
 <div id="faq">
     <div class="container-fluid">
         <div class="row row-max">
-            <h1 class="text-center">Часто задаваемые вопросы</h1>
+            <h1 class="text-center">Հաճախ տրվող հարցեր</h1>
             <div id="accordion">
                 <?php if(!empty($faqs)) { ?>
                     <?php foreach($faqs as $item) { ?>
 
-                        <h3>Question: <?php echo $item->question; ?></h3>
+                        <h3><?php echo $this->lang->line('question'); ?>: <?php echo $item['question']; ?></h3>
                         <div>
-                            <p>Answer:</p>
-                            <p><?php echo $item->answer; ?></p>
+                            <p><?php echo $this->lang->line('answer'); ?>:</p>
+                            <p><?php echo $item['answer']; ?></p>
                         </div>
                     <?php } ?>
                 <?php } ?>

@@ -1,7 +1,3 @@
-body {
-    font-family: 'Segoe UI Emoji';
-    font-size: 13px;
-}
 @media (min-width: 1700px) {
     .todays {
         right: -14px !important;
@@ -552,7 +548,7 @@ body {
     margin-right: 3px;
 }
 .dropdown-menu.custom, .btn.custom {
-    width: 117px;
+    width: 80px;
     background-color: white;
     border: 1px solid #696a6a;
     color: #4CCCFB;
@@ -877,7 +873,15 @@ body {
 }
 .design {
     color: #747474;
+	margin-bottom:15px;
 }
+
+.company {
+	font-size: 14px;
+	padding:15px 0;
+	margin:0;
+}
+
 
 
 audio {
@@ -1088,6 +1092,7 @@ a:hover.slidesjs-stop {
     -moz-border-radius: 10px;
     border-radius: 10px;
     float: right;
+	font-size: 14px;
 }
 .see-more:hover{
     text-decoration: none;
@@ -1162,6 +1167,7 @@ a:hover.slidesjs-stop {
     font-size: 13px;
     max-height: 107px;
     overflow: hidden;
+	margin:0;
 }
 .s-info {
     margin-top: 44px;
@@ -1183,8 +1189,23 @@ a:hover.slidesjs-stop {
 
 
 .social_icon {
-    background-color: #1084da;
+    background-color: transparent;
     padding: 5px;
+}
+
+.social_icon a {
+	margin-right:10px;
+}
+
+.scrolltop {
+	width: 30px;
+	height:15px;
+    background-image: url(../images/img/scrolltop.png);
+	display:inline-block;
+	vertical-align: middle;
+	cursor:pointer;
+	background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #playerContainer {
@@ -1399,4 +1420,79 @@ a:hover.slidesjs-stop {
 
 #faq h3 {
     margin-bottom: 10px;
+}
+
+
+/* star-like */
+.vote  {
+	margin:0 auto;
+	display: inline-block;
+}
+
+.rating {
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  display: table-cell;
+}
+.vote .rating label {
+  float: right;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.vote .rating label:not(:first-of-type) {
+  padding-right: 2px;
+}
+.vote .rating label:before {
+  content: "\2605";
+  font-size: 42px;
+  color: #8e8e8e;
+  line-height: 1;
+}
+.vote .rating input {
+  display: none;
+}
+.vote .rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+  color: #d8ad00;
+}
+
+/* star-like */
+
+/*custom*/
+
+.dropdown-menu {
+	min-width: 100%;
+}
+.custom  li i {padding-right:2px;}
+.custom li .dram {
+	font-family: cursive;
+    font-weight: 800;
+    font-style: initial;
+}
+p {font-size:14px;}
+
+.ui-accordion .ui-accordion-header {
+    font-size: 150%;
+}
+
+.form-container input[type=submit] {
+    min-width: 200px;
+    margin: 5px auto 0;
+    text-decoration: none;
+    color: #287eaf;
+    transition: color .4s ease, opacity .4s ease, border-color .4s ease, background-color .4s ease;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 10px 15px;
+    border: 1px solid #287eaf;
+    display: inline-block;
+}
+
+#contact h1 {
+    margin-bottom: 50px;
 }

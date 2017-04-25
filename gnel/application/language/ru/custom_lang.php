@@ -347,8 +347,33 @@ $lang['Blog']				    							= "Блог";
 $lang['know more']				    						= "Узнать больше...";
 $lang['Sale']				    							= "Скидка";
 
-															
+$lang['catalog']				    						= "Каталог";
+$lang['brands']				    						    = "Бренды";
+$lang['virtual_visits']				    					= "Виртуальные визиты";
+$lang['news']				    					        = "Новости";
+$lang['express_delivery']				    			    = "Экспресс доставка";
+$lang['regular_delivery']				    			    = "Регулярная доставка";
+$lang['product_name']				    			        = "Название продукта";
+$lang['evaluate_the_quality_of_service']				    = "Оценить качество обслуживания";
+$lang['proposals_and_complaints']				            = "Предложения и жалобы";
+$lang['our_blog']				                            = "Наш блог";
+$lang['registration']				                        = "Регистрация";
+$lang['forget_password']				                    = "Забыли Пароль";
+$lang['login']				                                = "Логин";
+$lang['todays_products']				                    = "Продукты дня";
+$lang['see_more']				                            = "Далее";
+$lang['working_hours']				                        = "Рабочее время";
+$lang['hot_line']				                            = "Горячая линия";
+$lang['search']				                                = "Поиск";
+$lang['basket']				                                = "Карзина";
+$lang['on_line_support']				                    = "On-line поддержка";
+$lang['enter']				                                = "Вход";
+$lang['about_us']				                            = "О нас";
+$lang['pur_partners']				                        = "Наши партнеры";
+$lang['our_works']				                            = "Наши работы";
+$lang['requisite']				                            = "Реквизит";
+$lang['points_of_issue']				                    = "Пункты задач";
+$lang['faq']				                                = "FAQ";
+$lang['company']				                            = "Создание сайтов и продвижение";
 
-
-
-
+														
