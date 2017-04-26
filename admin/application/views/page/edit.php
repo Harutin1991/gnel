@@ -6,8 +6,7 @@
     </div>
 <?php endif; ?>
 
-<?php if (!empty($pages)) { ?>
-
+<?php if (isset($page['parent_id']) && !$page['parent_id']) {  ?>
     <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
@@ -29,6 +28,7 @@
                         </a>
                     </div>
                     <div class="clear"></div><br>
+					<?php if (!empty($pages)) {  ?>
                     <table>
                         <tbody>
                             <div>
@@ -62,7 +62,7 @@
                             </div>
                         </tbody>
                     </table>
-
+<?php } ?>
                 </div>
             </div>
         </div>

@@ -21,9 +21,11 @@ class Contact extends MY_Controller {
     }
     public function index() {
 
-        $this->data['pages'] = $this->PageModel->getPageData();
+        $this->data['contact'] = $this->ContactModel->get('contact', 2);
+        $this->data['contact_topic'] = $this->ContactModel->getAll('contact_topic');
+//        var_dump($this->data['pages']); die;
 
-        $this->load->view('page/index', $this->data);
+        $this->load->view('contact/index', $this->data);
     }
 
 

@@ -318,7 +318,7 @@ function brand_url($brand_id, $brand_name) {
     return $url;
 }
 
-function drawMenu($top_menu_pages, $attributes = array()) {
+function drawMenu($top_menu_pages, $attributes = array(), $col_count) {
     $attr = '';
     if (count($attributes) > 0) {
         foreach ($attributes AS $key => $val) {
@@ -326,33 +326,41 @@ function drawMenu($top_menu_pages, $attributes = array()) {
         }
     }
     $html = '<ul ' . $attr . '>';
-    $i = 1;
+    $i = 0;
     $count = count($top_menu_pages);
     if ($count > 0) {
         foreach ($top_menu_pages AS $page) {
-            $i++;
             if($page->parent_id == 0) {
-                $html .= '<li' . ($i == $count ? ' class="last-item"' : '') . '>';
+                $i++;
+//                if($i <= 6 || $i%$col_count == 0) {
+                    $html .= '<li' . ($i == $col_count ? ' class="last-item"' : '') . '>';
 
-                //var_dump(strpos($page->url, 'http://'));echo "<br/>";
-                if (strpos($page->id, '/') === 0) {
-                    $id = site_url($page->id);
-                } else if (strpos($page->id, 'http://') === 0) {
-                    $id = $page->id;
-                } else {
-                    $id = site_url('page/' . $page->id);
-                }
-                $html .= '<a href="' . $id . '">' . $page->title . '</a>';
-                if (isset($page->children)) {
-                    $html .= drawMenu($page->children);
-                }
-                $html .= '</li>';
+                    //var_dump(strpos($page->url, 'http://'));echo "<br/>";
+                    if (strpos($page->id, '/') === 0) {
+                        $id = site_url($page->id);
+                    } else if (strpos($page->id, 'http://') === 0) {
+                        $id = $page->id;
+                    } else {
+                        $id = site_url('page/' . $page->id);
+                    }
+                    $html .= '<a href="' . $id . '">' . $page->title . '</a>';
+                    if (isset($page->children)) {
+                        $html .= drawMenu($page->children);
+                    }
+                    $html .= '</li>';
+//                }
+
             }
 
         }
     }
-    $html .= '</ul>';
-    return $html;
+    if($i > 3){
+        $html .= '</ul>';
+    }
+
+
+    $return = ['html'=>$html,'count'=>$i];
+    return $return;
 }
 
 

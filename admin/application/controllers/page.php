@@ -118,7 +118,7 @@ class Page extends Main_controller {
                 
                 $this->session->set_flashdata('message', 'edit_success');
 //                redirect(current_url(), 'refresh');
-                if(!$this->data['pages']) {
+                if(!empty($this->data['pages'])) {
                     redirect("page/edit/" . $parent_id, 'refresh');
                 } else {
                     redirect("page/index", 'refresh');

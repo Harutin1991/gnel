@@ -33,13 +33,24 @@
             <div class="fm">
 
 <!--                --><?php //echo print_r($page); die; ?>
-                <?php echo drawMenu($page, array("class" => "menu_footer_item text_item")); ?>
 
-                <ul class="col-sm-3 col-xs-6">
-                    <li><a href="<?php echo base_url('faq')?>"><?php echo $this->lang->line('faq'); ?></a></li>
-                    <li><a href="<?php echo base_url('blog')?>"><?php echo $this->lang->line('our_blog'); ?></a></li>
-                    <li><a href="<?php echo base_url('contact')?>"><?php echo $this->lang->line('Contact us'); ?></a></li>
-                </ul>
+                <?php $standartMenu = drawMenu($page, array("class" => "col-sm-3 col-xs-6"), 6);
+
+                if($standartMenu['count'] <= 3 ) { ?>
+                    <?=$standartMenu['html'] ;?>
+                        <li><a href="<?php echo base_url('faq')?>"><?php echo $this->lang->line('faq'); ?></a></li>
+                        <li><a href="<?php echo base_url('blog')?>"><?php echo $this->lang->line('our_blog'); ?></a></li>
+                        <li><a href="<?php echo base_url('contact')?>"><?php echo $this->lang->line('Contact us'); ?></a></li>
+                    </ul>
+                <?php  }else{ ?>
+                    <?=$standartMenu ['html'] ; ?>
+                    <ul class="col-sm-3 col-xs-6">
+                        <li><a href="<?php echo base_url('faq')?>"><?php echo $this->lang->line('faq'); ?></a></li>
+                        <li><a href="<?php echo base_url('blog')?>"><?php echo $this->lang->line('our_blog'); ?></a></li>
+                        <li><a href="<?php echo base_url('contact')?>"><?php echo $this->lang->line('Contact us'); ?></a></li>
+                    </ul>
+                <?php  } ?>
+
 
 
             </div>
@@ -55,14 +66,15 @@
 				<a href="https://www.youtube.com/" target="_blank"><img src="/themes/gnel/images/social/youtube.png"></a>
 				<a href="https://twitter.com/?lang=ru" target="_blank"><img src="/themes/gnel/images/social/twiter.png"></a>
 				<a href="https://plus.google.com/collections/featured" target="_blank"><img src="/themes/gnel/images/social/gplus.png"></a>
-				<a href="https://ok.ru/" target="_blank"><img src="/themes/gnel/images/social/ok.png"></a>
-				<a href="view-source:http://gnel-front.atalyanstudio.am/" target="_blank"><img src="/themes/gnel/images/social/rss.png"></a>
+<!--				<a href="https://ok.ru/" target="_blank"><img src="/themes/gnel/images/social/ok.png"></a>-->
+<!--				<a href="view-source:http://gnel-front.atalyanstudio.am/" target="_blank"><img src="/themes/gnel/images/social/rss.png"></a>-->
             </div>
         </div>
 
 <!--        <p class="col-xs-12 col-sm-6 text-left padding-lr0">-->
 <!--            <i>made in Armenia</i>-->
 <!--        </p>-->
+
         <p class="col-xs-12 col-sm-6 text-right padding-lr0 company">
             <i><a href="http://astudio.am/" target="_blank" title="Design and development">Design and development by</a> ASTUDIO</i>
         </p>

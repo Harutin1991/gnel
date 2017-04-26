@@ -15,7 +15,8 @@
                                 </div>
                             </div>
                             <div class="text-container">
-                                <a href="<?php echo blognews_url($news->id, $news->title); ?>"><?php echo $news->title; ?></a>
+<!--                                <a href="--><?php //echo blognews_url($news->id, $news->title); ?><!--">--><?php //echo $news->title; ?><!--</a>-->
+                                <a href="<?php echo base_url('blog/'.$news->id); ?>"><?php echo $news->title; ?></a>
                             </div>
                         </div>
                     </div>
